@@ -1,0 +1,9 @@
+build
+android
+ios
+test
+.idea
+*.iml
+.metadata
+.packages
+pubspec.lock
