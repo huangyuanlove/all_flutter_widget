@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'all_widget.dart';
 import 'third_part.dart';
+import 'package:flutter_widget/widget_test/main.dart';
 void main() {
 //  debugPaintSizeEnabled = true;
   runApp(MyApp());
@@ -37,9 +38,12 @@ class _HomeWidgetState extends State<HomeWidget> {
     _myTabs.add(
         BottomNavigationBarItem(icon: Icon(Icons.widgets), title: Text("控件")));
     _myTabs.add(
+        BottomNavigationBarItem(icon: Icon(Icons.build), title: Text("Test")));
+    _myTabs.add(
         BottomNavigationBarItem(icon: Icon(Icons.all_out), title: Text("三方库")));
 
     bodyChildren.add(AllWidget());
+    bodyChildren.add(AppTestWidget());
     bodyChildren.add(ThirdPart());
 
   }
