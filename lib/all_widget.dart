@@ -16,70 +16,172 @@ class AllWidget extends StatelessWidget {
   }
 }
 
+TextStyle firstStyle = const TextStyle(fontSize: 20);
+TextStyle secondStyle = TextStyle(fontSize: 16);
+TextStyle thirdStyle = TextStyle(fontSize: 12);
+
 class Entry {
-  Entry(this.title, [this.children = const <Entry>[]]);
+  Entry(this.title, [this.textStyle, this.children = const <Entry>[]]);
 
   final String title;
   final List<Entry> children;
+  TextStyle textStyle = thirdStyle;
 }
 
 // The entire multilevel list displayed by this app.
 final List<Entry> data = <Entry>[
   Entry(
     'Element',
+    firstStyle,
     <Entry>[
       Entry(
         'Form',
+        secondStyle,
         <Entry>[
-          Entry('Input'),
-          Entry('Checkbox'),
-          Entry('Button'),
-          Entry('Text'),
-          Entry('Radio'),
-          Entry('Slider'),
-          Entry('Switch'),
+          Entry('Checkbox', thirdStyle),
+          Entry('Button', thirdStyle),
+          Entry('Text', thirdStyle),
+          Entry('Radio', thirdStyle),
+          Entry('Slider', thirdStyle),
+          Entry('Switch', thirdStyle),
         ],
       ),
-      Entry('Frame', <Entry>[
-        Entry('Align'),
-        Entry('Stack'),
-        Entry('Layout'),
-        Entry('Box'),
-        Entry('Expanded'),
-        Entry('Spacing'),
-        Entry('Table'),
+      Entry('Frame', secondStyle, <Entry>[
+        Entry('Align', thirdStyle),
+        Entry('Stack', thirdStyle),
+        Entry('Layout', thirdStyle),
+        Entry('Box', thirdStyle),
+        Entry('Expanded', thirdStyle),
+        Entry('Spacing', thirdStyle),
+        Entry('Table', thirdStyle),
       ]),
-      Entry('Media', <Entry>[
-        Entry('Image'),
-        Entry('Icon'),
-        Entry('Cabvas'),
+      Entry('Media', secondStyle, <Entry>[
+        Entry('Image', thirdStyle),
+        Entry('Icon', thirdStyle),
+        Entry('Canvas', thirdStyle),
       ]),
     ],
   ),
   Entry(
     'Components',
+    firstStyle,
     <Entry>[
-      Entry('Navigation'),
-      Entry('List'),
-      Entry('Card'),
-      Entry('Bar'),
-      Entry('Dialog'),
-      Entry('Scaffold'),
-      Entry('Grid'),
-      Entry('Scroll'),
-      Entry('Tab'),
-      Entry('Menu'),
-      Entry('Pick'),
-      Entry('Chip'),
-      Entry('Panel'),
-      Entry('Progress'),
+      Entry('Navigation', secondStyle, <Entry>[
+        Entry("BottomNavigationBarItem", thirdStyle),
+        Entry("BottomNavigationBar", thirdStyle),
+      ]),
+      Entry('List', secondStyle, <Entry>[
+        Entry('AnimatedList', thirdStyle),
+        Entry('ListView', thirdStyle),
+        Entry('ListBody', thirdStyle),
+      ]),
+      Entry('Card', secondStyle, <Entry>[
+        Entry('Card', thirdStyle),
+      ]),
+      Entry('Bar', secondStyle, <Entry>[
+        Entry('AppBar', thirdStyle),
+        Entry('SnackBar', thirdStyle),
+        Entry('SliverAppBar', thirdStyle),
+        Entry('ScrollbarPainter', thirdStyle),
+        Entry('FlexbleSpaceBar', thirdStyle),
+        Entry('ButtonBar', thirdStyle),
+        Entry('SnackBarAction', thirdStyle),
+        Entry('TabBar', thirdStyle),
+      ]),
+      Entry('Dialog', secondStyle, <Entry>[
+        Entry('AlertDialog', thirdStyle),
+        Entry('Dialog', thirdStyle),
+        Entry('AboutDialog', thirdStyle),
+        Entry('SimpleDialog', thirdStyle),
+      ]),
+      Entry('Scaffold', secondStyle, <Entry>[
+        Entry('Scaffold', thirdStyle),
+        Entry('ScaffoldState', thirdStyle),
+      ]),
+      Entry('Grid', secondStyle, <Entry>[
+        Entry('GridTile', thirdStyle),
+        Entry('GridView', thirdStyle),
+        Entry('GridPaper', thirdStyle),
+        Entry('SliverGrid', thirdStyle),
+        Entry('GridTileBar', thirdStyle),
+      ]),
+      Entry('Scroll', secondStyle, <Entry>[
+        Entry('ScrollView', thirdStyle),
+        Entry('Scrollable', thirdStyle),
+        Entry('ScrollbarPainter', thirdStyle),
+        Entry('ScrollMatrics', thirdStyle),
+        Entry('ScrollPhysics', thirdStyle),
+        Entry('BoxScrollView', thirdStyle),
+        Entry('CustomScrollView', thirdStyle),
+        Entry('NestedScrollView', thirdStyle),
+      ]),
+      Entry('Tab', secondStyle, <Entry>[
+        Entry('Tab', thirdStyle),
+      ]),
+      Entry('Menu', secondStyle, <Entry>[
+        Entry('CheckedPopupMenuItem', thirdStyle),
+        Entry('DropdownMenuItem', thirdStyle),
+        Entry('PopupMenuButton', thirdStyle),
+        Entry('PopupMenuDivider', thirdStyle),
+        Entry('PopupMenuEntry', thirdStyle),
+        Entry('PopupMenuItem', thirdStyle),
+      ]),
+      Entry('Pick', secondStyle, <Entry>[
+        Entry('DayPicker', thirdStyle),
+        Entry('MonthPicker', thirdStyle),
+        Entry('YearPicker', thirdStyle),
+        Entry('ShowdatePicker', thirdStyle),
+        Entry('CityPicker', thirdStyle),
+      ]),
+      Entry('Chip', secondStyle, <Entry>[
+        Entry('Chip', thirdStyle),
+        Entry('ChipTheme', thirdStyle),
+        Entry('ChipThemeData', thirdStyle),
+        Entry('ChoiceChip', thirdStyle),
+        Entry('FilterChip', thirdStyle),
+        Entry('InputChip', thirdStyle),
+        Entry('RawChip', thirdStyle),
+      ]),
+      Entry('Panel', secondStyle, <Entry>[
+        Entry('ExpansionPanelList', thirdStyle),
+      ]),
+      Entry('Progress', secondStyle, <Entry>[
+        Entry('LinearProgressIndicator', thirdStyle),
+        Entry('CircularProgressIndicator', thirdStyle),
+      ]),
     ],
   ),
   Entry(
     'Themes',
+    firstStyle,
     <Entry>[
-      Entry('Material'),
-      Entry('Cupertino'),
+      Entry('Material', secondStyle, <Entry>[
+        Entry('MaterialApp', thirdStyle),
+        Entry('MaterialColor', thirdStyle),
+        Entry('MaterialButton', thirdStyle),
+        Entry('MaterialPageRoter', thirdStyle),
+        Entry('MaterialAccentColor', thirdStyle),
+        Entry('MergeableMaterialItem', thirdStyle),
+      ]),
+      Entry('Cupertino', secondStyle, <Entry>[
+        Entry('CupertinoApp', thirdStyle),
+        Entry('CupertinoButton', thirdStyle),
+        Entry('CupertinoColors', thirdStyle),
+        Entry('CupertinoIcons', thirdStyle),
+        Entry('CupertinoNavigationBar', thirdStyle),
+        Entry('CupertinoPageRoute', thirdStyle),
+        Entry('CupertinoPageScaffold', thirdStyle),
+        Entry('CupertinoPicker', thirdStyle),
+        Entry('CupertinoPopupSurface', thirdStyle),
+        Entry('CupertinoScrollbar', thirdStyle),
+        Entry('CupertinoSlider', thirdStyle),
+        Entry('CupertinoSegmentedControl', thirdStyle),
+        Entry('CupertinoSliverNavigationBar', thirdStyle),
+        Entry('CupertinoSwitch', thirdStyle),
+        Entry('CupertinoTabBar', thirdStyle),
+        Entry('CupertinoTabScaffold', thirdStyle),
+        Entry('CupertinoTimerPicker', thirdStyle),
+      ]),
     ],
   ),
 ];
@@ -89,21 +191,33 @@ class EntryItem extends StatelessWidget {
 
   final Entry entry;
 
-  Widget _buildTiles(Entry root) {
+  Widget _buildTiles(Entry root, BuildContext context) {
     if (root.children.isEmpty) {
-
-      return ListTile(title: Text(root.title));
+      return ListTile(
+          title: FlatButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(root.title);
+              },
+              child: Text(
+                root.title,
+                style: root.textStyle,
+              )));
     } else {
       return ExpansionTile(
         key: PageStorageKey<Entry>(root),
-        title: Text(root.title,),
-        children: root.children.map(_buildTiles).toList(),
+        title: ListTile(
+          title: Text(
+            root.title,
+            style: root.textStyle,
+          ),
+        ),
+        children: root.children.map((it)=>_buildTiles(it,context)).toList(),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return _buildTiles(entry);
+    return _buildTiles(entry, context);
   }
 }
