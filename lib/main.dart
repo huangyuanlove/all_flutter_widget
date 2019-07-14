@@ -4,6 +4,7 @@ import 'all_widget.dart';
 import 'third_part.dart';
 import 'package:flutter_widget/widget_test/main.dart';
 import 'all_widget_in_project.dart';
+
 void main() {
 //  debugPaintSizeEnabled = true;
   runApp(MyApp());
@@ -23,6 +24,11 @@ class MyApp extends StatelessWidget {
           },
           "Button": (BuildContext context) {
             return ButtonWidget();
+          },
+          "Slider": (BuildContext context) {
+            return SliderWidget();
+          }, "Switch": (BuildContext context) {
+            return SwitchWidget();
           },
         });
   }

@@ -28,7 +28,6 @@ dependencies:
   cached_network_image: ^0.7.0
   keyboard_visibility: ^0.5.6
   provider: ^3.0.0+1
-  flare_flutter: ^1.5.0
 
 dev_dependencies:
   flutter_test:

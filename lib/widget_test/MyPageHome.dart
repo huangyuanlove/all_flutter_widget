@@ -14,7 +14,6 @@ import 'package:flutter_widget/widget_test/provider/counter_model.dart';
 import 'package:provider/provider.dart';
 import 'save_image_to_file.dart';
 import 'test_build_stateless.dart';
-import 'package:flutter_widget/widget_test/flare/flare_home.dart';
 import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_page.dart';
 class MyPageHome extends StatefulWidget {
   @override
@@ -226,14 +225,6 @@ class MyPageHomeState extends State<MyPageHome> {
                 Navigator.pushNamed(context, "a_router_widget").then((value) {
                   print("命名路由返回的参数$value");
                 });
-              },
-            ),
-            FlatButton(
-              child: Text("flare"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return FlareHomeWidget();
-                }));
               },
             ),
             FlatButton(

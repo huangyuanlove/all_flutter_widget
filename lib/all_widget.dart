@@ -40,8 +40,6 @@ final List<Entry> data = <Entry>[
         <Entry>[
           Entry('Checkbox', thirdStyle),
           Entry('Button', thirdStyle),
-          Entry('Text', thirdStyle),
-          Entry('Radio', thirdStyle),
           Entry('Slider', thirdStyle),
           Entry('Switch', thirdStyle),
         ],
