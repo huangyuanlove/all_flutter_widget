@@ -1,6 +1,7 @@
-# flutter_widget
+## flutter从挣扎到放弃
 
-try to wirte all widget
+
+先熟悉一下Flutter中有哪些控件。。。先挣扎着。。。。
 
 ## Getting Started
 
