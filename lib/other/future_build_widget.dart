@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
+import 'package:async/async.dart';
 
 class FutureBuildWidget extends StatefulWidget {
   @override
@@ -28,6 +29,12 @@ class _FutureBuildWidgetState extends State<FutureBuildWidget> {
         builder: _buildFuture,
         future: _futureBuilderFuture,
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        setState(() {
+          _futureBuilderFuture = _getData();
+        });
+
+      },child: Icon(Icons.android),),
     );
   }
 
@@ -62,5 +69,15 @@ class _FutureBuildWidgetState extends State<FutureBuildWidget> {
     var responseBody = await response.transform(utf8.decoder).join();
 
     return responseBody;
+  }
+
+  Future _test() async {
+//   return   HttpClient().getUrl(Uri.parse("http://api.douban.com/v2/movie/top250?count=15")).then((request)=>request.close().then((response)=>response.transform(utf8.decoder).join().then(print)));
+
+    return HttpClient()
+        .getUrl(Uri.parse("http://api.douban.com/v2/movie/top250?count=15"))
+        .then((request) => request.close())
+        .then((response) => response.transform(utf8.decoder).join())
+        .then(print);
   }
 }
