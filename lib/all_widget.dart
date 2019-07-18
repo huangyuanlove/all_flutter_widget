@@ -45,7 +45,8 @@ final List<Entry> data = <Entry>[
         ],
       ),
       Entry('Frame', secondStyle, <Entry>[
-        Entry('Align', thirdStyle),
+        Entry('Row', thirdStyle),
+        Entry('Column', thirdStyle),
         Entry('Stack', thirdStyle),
         Entry('Layout', thirdStyle),
         Entry('Box', thirdStyle),
@@ -182,6 +183,9 @@ final List<Entry> data = <Entry>[
       ]),
     ],
   ),
+  Entry("Other",firstStyle,<Entry>[
+    Entry("FutureBuild",thirdStyle)
+  ]),
 ];
 
 class EntryItem extends StatelessWidget {

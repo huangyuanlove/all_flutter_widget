@@ -27,8 +27,18 @@ class MyApp extends StatelessWidget {
           },
           "Slider": (BuildContext context) {
             return SliderWidget();
-          }, "Switch": (BuildContext context) {
+          },
+          "Switch": (BuildContext context) {
             return SwitchWidget();
+          },
+          "Row": (BuildContext context) {
+            return AlignFrame();
+          },
+          "Column": (BuildContext context) {
+            return AlignFrame();
+          },
+          "FutureBuild": (BuildContext context) {
+            return FutureBuildWidget();
           },
         });
   }
