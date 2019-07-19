@@ -40,6 +40,9 @@ class MyApp extends StatelessWidget {
           "FutureBuild": (BuildContext context) {
             return FutureBuildWidget();
           },
+          "Stack": (BuildContext context) {
+            return StackWidget();
+          },
         });
   }
 }
