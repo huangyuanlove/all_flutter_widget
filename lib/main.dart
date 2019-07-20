@@ -43,6 +43,12 @@ class MyApp extends StatelessWidget {
           "Stack": (BuildContext context) {
             return StackWidget();
           },
+          "Layout": (BuildContext context) {
+            return ContainerAndCenter();
+          },
+          "Box": (BuildContext context) {
+            return BoxWidget();
+          },
         });
   }
 }

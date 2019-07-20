@@ -6,3 +6,5 @@ export 'package:flutter_widget/form/switch_widget.dart';
 export 'package:flutter_widget/frame/align_frame.dart';
 export 'package:flutter_widget/other/future_build_widget.dart';
 export 'package:flutter_widget/frame/stack_widget.dart';
+export 'package:flutter_widget/frame/container_widget.dart';
+export 'package:flutter_widget/frame/box_widget/box_widget.dart';
