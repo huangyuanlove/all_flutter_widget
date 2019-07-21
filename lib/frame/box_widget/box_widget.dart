@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'overflow_box_widget.dart';
 import 'decoratebox_widget.dart';
 import 'fitted_box_widget.dart';
+import 'limited_box_widget.dart';
+
 class BoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,30 +20,42 @@ class BoxWidget extends StatelessWidget {
               width: 250,
               height: 80,
               color: Colors.teal,
-              child: Text("ConstrainedBox",softWrap: true,),
+              child: Text(
+                "ConstrainedBox",
+                softWrap: true,
+              ),
             ),
           ),
           FlatButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context){return OverflowBoxWidget();}));
-
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return OverflowBoxWidget();
+              }));
             },
             child: Text("OverflowBox"),
           ),
           FlatButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context){return DecorateBoxWidget();}));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return DecorateBoxWidget();
+              }));
             },
             child: Text("DecoratedBox"),
           ),
           FlatButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context){return FittedBoxWidget();}));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return FittedBoxWidget();
+              }));
             },
             child: Text("FittedBox"),
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return LimitedBoxWidget();
+              }));
+            },
             child: Text("LimitedBox"),
           ),
           FlatButton(

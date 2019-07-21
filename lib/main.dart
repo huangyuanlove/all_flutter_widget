@@ -46,8 +46,13 @@ class MyApp extends StatelessWidget {
           "Layout": (BuildContext context) {
             return ContainerAndCenter();
           },
-          "Box": (BuildContext context) {
-            return BoxWidget();
+          "Expanded": (BuildContext context) {
+            return ExpandedWidget();
+          },
+          "Spacing": (BuildContext context) {
+            return SpacingWidget();
+          },"Table": (BuildContext context) {
+            return TableWidget();
           },
         });
   }
