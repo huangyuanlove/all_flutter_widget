@@ -51,8 +51,11 @@ class MyApp extends StatelessWidget {
           },
           "Spacing": (BuildContext context) {
             return SpacingWidget();
-          },"Table": (BuildContext context) {
+          },
+          "Table": (BuildContext context) {
             return TableWidget();
+          },"Canvas": (BuildContext context) {
+            return CanvasWidget();
           },
         });
   }

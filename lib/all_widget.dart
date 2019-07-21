@@ -55,8 +55,6 @@ final List<Entry> data = <Entry>[
         Entry('Table', thirdStyle),
       ]),
       Entry('Media', secondStyle, <Entry>[
-        Entry('Image', thirdStyle),
-        Entry('Icon', thirdStyle),
         Entry('Canvas', thirdStyle),
       ]),
     ],
