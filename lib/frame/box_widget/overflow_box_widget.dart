@@ -9,25 +9,27 @@ class OverflowBoxWidget extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-//          OverflowBox(
-//            maxWidth: 400,
-//            maxHeight: 400,
-//            minHeight: 100,
-//            minWidth: 100,
-//            child: Container(
-//              width: 300,
-//              height: 80,
-//              color: Colors.tealAccent,
-//            ),
-//          ),
+          OverflowBox(
+            maxWidth: 400,
+            maxHeight: 400,
+            minHeight: 100,
+            minWidth: 100,
+            child: Container(
+              width: 300,
+              height: 80,
+              color: Colors.tealAccent,
+            ),
+          ),
           SizedOverflowBox(
             size: Size(100, 100),
             child: Container(
               width: 200,
               height: 80,
               color: Colors.teal,
+              child: Text("SizedOverflowBox"),
             ),
-          )
+          ),
+
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'overflow_box_widget.dart';
+import 'decoratebox_widget.dart';
+import 'fitted_box_widget.dart';
 class BoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,15 @@ class BoxWidget extends StatelessWidget {
             child: Text("OverflowBox"),
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){return DecorateBoxWidget();}));
+            },
             child: Text("DecoratedBox"),
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){return FittedBoxWidget();}));
+            },
             child: Text("FittedBox"),
           ),
           FlatButton(
