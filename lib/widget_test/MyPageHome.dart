@@ -41,14 +41,7 @@ class MyPageHomeState extends State<MyPageHome> {
         child: new ListView(
           children: <Widget>[
             RandomWordsWidget(),
-            FlatButton(
-              child: Text("new route"),
-              textColor: Colors.amber,
-              onPressed: () {
-                debugDumpApp();
-                Navigator.pushNamed(context, "new_page");
-              },
-            ),
+
             FlatButton(
               child: Text("router"),
               onPressed: () {
@@ -67,27 +60,7 @@ class MyPageHomeState extends State<MyPageHome> {
                   text: "http://flutter.github.io",
                   style: TextStyle(color: Colors.blue))
             ])),
-            RaisedButton.icon(
-              icon: Icon(Icons.add),
-              label: Text("RaisedButton.icon"),
-              onPressed: () {},
-            ),
-            FlatButton(
-              child: Text("normal"),
-              onPressed: () => {},
-            ),
-            OutlineButton(
-              child: Text("normal"),
-              onPressed: () {},
-            ),
-            OutlineButton(
-              child: Text("normal"),
-              onPressed: () => {},
-            ),
-            IconButton(
-              icon: Icon(Icons.thumb_up),
-              onPressed: () => {},
-            ),
+
             FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
@@ -103,18 +76,14 @@ class MyPageHomeState extends State<MyPageHome> {
                     }))
                   },
             ),
-            Image(
-              image: NetworkImage(
-                  "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
-              width: 100.0,
-            ),
+
             SwitchAndCheckBoxTestRoute(),
             FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
               splashColor: Colors.grey,
-              child: Text("测试拆分小部件"),
+              child: Text("CustomScrollView"),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0)),
               onPressed: () => {
