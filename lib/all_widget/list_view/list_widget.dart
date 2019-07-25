@@ -28,7 +28,11 @@ class ListWidget extends StatelessWidget {
             child: Text("ListView"),
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                return ListBodyWidget();
+              }));
+            },
             child: Text("ListBody"),
           ),
         ],
