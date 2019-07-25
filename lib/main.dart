@@ -56,6 +56,8 @@ class MyApp extends StatelessWidget {
             return TableWidget();
           },"Canvas": (BuildContext context) {
             return CanvasWidget();
+          },"ListView": (BuildContext context) {
+            return ListWidget();
           },
         });
   }

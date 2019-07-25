@@ -63,14 +63,9 @@ final List<Entry> data = <Entry>[
     'Components',
     firstStyle,
     <Entry>[
-      Entry('Navigation', secondStyle, <Entry>[
-        Entry("BottomNavigationBarItem", thirdStyle),
-        Entry("BottomNavigationBar", thirdStyle),
-      ]),
+
       Entry('List', secondStyle, <Entry>[
-        Entry('AnimatedList', thirdStyle),
         Entry('ListView', thirdStyle),
-        Entry('ListBody', thirdStyle),
       ]),
       Entry('Card', secondStyle, <Entry>[
         Entry('Card', thirdStyle),
