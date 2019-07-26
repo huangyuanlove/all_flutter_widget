@@ -16,3 +16,4 @@ export 'package:flutter_widget/all_widget/list_view/list_view_widget.dart';
 export 'package:flutter_widget/all_widget/list_view/animated_list.dart';
 export 'package:flutter_widget/all_widget/list_view/list_body_widget.dart';
 export 'package:flutter_widget/all_widget/bar/app_bar_widget.dart';
+export 'package:flutter_widget/all_widget/bar/sliver_app_bar_widget.dart';

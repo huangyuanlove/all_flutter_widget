@@ -66,8 +66,16 @@ class MyApp extends StatelessWidget {
           },
           "AnimatedList": (BuildContext context) {
             return AnimatedListViewWidget();
-          },"AppBar": (BuildContext context) {
+          },
+          "AppBar": (BuildContext context) {
             return AppBarWidget();
+          },
+          "SnackBar": (BuildContext context) {
+            return AppBarWidget();
+          },"SnackBarAction": (BuildContext context) {
+            return AppBarWidget();
+          },"SliverAppBar": (BuildContext context) {
+            return SliverAppbarWidget();
           },
         });
   }
