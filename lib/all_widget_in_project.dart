@@ -12,4 +12,6 @@ export 'package:flutter_widget/all_widget/frame/expanded_widget.dart';
 export 'package:flutter_widget/all_widget/frame/spacing_widget.dart';
 export 'package:flutter_widget/all_widget/frame/table_widget.dart';
 export 'package:flutter_widget/all_widget/canvas/canvas_widget.dart';
-export 'package:flutter_widget/all_widget/list_view/list_widget.dart';
+export 'package:flutter_widget/all_widget/list_view/list_view_widget.dart';
+export 'package:flutter_widget/all_widget/list_view/animated_list.dart';
+export 'package:flutter_widget/all_widget/list_view/list_body_widget.dart';

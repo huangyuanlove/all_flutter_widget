@@ -66,9 +66,8 @@ final List<Entry> data = <Entry>[
 
       Entry('List', secondStyle, <Entry>[
         Entry('ListView', thirdStyle),
-      ]),
-      Entry('Card', secondStyle, <Entry>[
-        Entry('Card', thirdStyle),
+        Entry('ListBody', thirdStyle),
+        Entry('AnimatedList', thirdStyle),
       ]),
       Entry('Bar', secondStyle, <Entry>[
         Entry('AppBar', thirdStyle),
