@@ -12,7 +12,6 @@ class _DialogWidgetState extends State<DialogWidget> {
     for (int i = 0; i < 30; i++) {
       dialogItem.add(Text("item at $i"));
     }
-
     return Scaffold(
       appBar: AppBar(title: Text("some dialog")),
       body: Column(
@@ -48,13 +47,29 @@ class _DialogWidgetState extends State<DialogWidget> {
           FlatButton(
             child: Text("AboutDialog"),
             onPressed: () {
-              showAboutDialog(context: context,applicationName:"applicationName",applicationVersion:"applicationVersion",applicationIcon:Text("applicationIcon Widget"),applicationLegalese:"lincense",children: dialogItem);
+              showAboutDialog(
+                  context: context,
+                  applicationName: "软件名",
+                  applicationVersion: "版本号",
+                  applicationIcon: Icon(Icons.check_box_outline_blank),
+                  applicationLegalese: "版权",
+                  children: dialogItem,
+              );
             },
-          )
+          ),
+          FlatButton(
+            child: Text("SimpleDialog"),
+            onPressed: (){
+              showDialog(context: context,builder: (BuildContext context){
+               return SimpleDialog(title: Text("title"),semanticLabel:"semanticLabel",children:<Widget>[
+                 SimpleDialogOption(child: Text("option one"),onPressed: (){Navigator.pop(context);},),
+                 SimpleDialogOption(child: Text("option two"),onPressed: (){Navigator.pop(context);},)
+               ]);
+              });
+            },
+          ),
         ],
       ),
     );
   }
-
-
 }

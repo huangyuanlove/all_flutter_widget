@@ -6,9 +6,12 @@ class AppBarWidget extends StatefulWidget {
 }
 
 class _AppBarWidgetState extends State<AppBarWidget> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         leading: FlatButton(
             onPressed: () {
@@ -17,9 +20,11 @@ class _AppBarWidgetState extends State<AppBarWidget> {
             child: Icon(Icons.arrow_back)),
         title: Text("title widget"),
         actions: [
-
           SnackBarWithoutAction(),
           SnackBarWithAction(),
+          IconButton(icon: Icon(Icons.speaker_notes),onPressed: (){
+            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("通过GlobalKey呼出SnakeBar")));
+          },)
         ],
         flexibleSpace: Container(
           color: Colors.red,
@@ -53,7 +58,8 @@ class SnackBarWithoutAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Scaffold.of(context).showSnackBar(SnackBar(content: Text("没有Action的SnakeBar")));
+        Scaffold.of(context)
+            .showSnackBar(SnackBar(content: Text("没有Action的SnakeBar")));
       },
       icon: Icon(Icons.done),
     );
@@ -65,9 +71,13 @@ class SnackBarWithAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Scaffold.of(context).showSnackBar(SnackBar(content: Text("右侧是一个ActionBar"),action:SnackBarAction(label: "确认撤销?", onPressed: (){
-          print("撤销");
-        })));
+        Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text("右侧是一个ActionBar"),
+            action: SnackBarAction(
+                label: "确认撤销?",
+                onPressed: () {
+                  print("撤销");
+                })));
       },
       icon: Icon(Icons.undo),
     );

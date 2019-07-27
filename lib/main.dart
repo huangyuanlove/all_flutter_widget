@@ -81,8 +81,33 @@ class MyApp extends StatelessWidget {
           },
           "FlexbleSpaceBar": (BuildContext context) {
             return SliverAppbarWidget();
-          },"AlertDialog": (BuildContext context) {
+          },
+          "AlertDialog": (BuildContext context) {
             return DialogWidget();
+          },
+          "Dialog": (BuildContext context) {
+            return DialogWidget();
+          },
+          "AboutDialog": (BuildContext context) {
+            return DialogWidget();
+          },
+          "SimpleDialog": (BuildContext context) {
+            return DialogWidget();
+          },
+          "GridTile": (BuildContext context) {
+            return GridTileWidget();
+          },
+          "GridView": (BuildContext context) {
+            return GridViewWidget();
+          },
+          "GridPaper": (BuildContext context) {
+            return GridTileWidget();
+          },
+          "GridTileBar": (BuildContext context) {
+            return GridTileWidget();
+          },
+          "SliverGrid": (BuildContext context) {
+            return SliverGridWidget();
           },
         });
   }

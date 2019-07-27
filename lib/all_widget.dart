@@ -82,10 +82,6 @@ final List<Entry> data = <Entry>[
         Entry('AboutDialog', thirdStyle),
         Entry('SimpleDialog', thirdStyle),
       ]),
-      Entry('Scaffold', secondStyle, <Entry>[
-        Entry('Scaffold', thirdStyle),
-        Entry('ScaffoldState', thirdStyle),
-      ]),
       Entry('Grid', secondStyle, <Entry>[
         Entry('GridTile', thirdStyle),
         Entry('GridView', thirdStyle),
