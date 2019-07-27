@@ -73,11 +73,8 @@ final List<Entry> data = <Entry>[
         Entry('AppBar', thirdStyle),
         Entry('SnackBar', thirdStyle),
         Entry('SliverAppBar', thirdStyle),
-        Entry('ScrollbarPainter', thirdStyle),
         Entry('FlexbleSpaceBar', thirdStyle),
-        Entry('ButtonBar', thirdStyle),
         Entry('SnackBarAction', thirdStyle),
-        Entry('TabBar', thirdStyle),
       ]),
       Entry('Dialog', secondStyle, <Entry>[
         Entry('AlertDialog', thirdStyle),

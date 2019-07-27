@@ -72,10 +72,17 @@ class MyApp extends StatelessWidget {
           },
           "SnackBar": (BuildContext context) {
             return AppBarWidget();
-          },"SnackBarAction": (BuildContext context) {
+          },
+          "SnackBarAction": (BuildContext context) {
             return AppBarWidget();
-          },"SliverAppBar": (BuildContext context) {
+          },
+          "SliverAppBar": (BuildContext context) {
             return SliverAppbarWidget();
+          },
+          "FlexbleSpaceBar": (BuildContext context) {
+            return SliverAppbarWidget();
+          },"AlertDialog": (BuildContext context) {
+            return DialogWidget();
           },
         });
   }
