@@ -90,10 +90,7 @@ final List<Entry> data = <Entry>[
         Entry('GridTileBar', thirdStyle),
       ]),
       Entry('Scroll', secondStyle, <Entry>[
-        Entry('ScrollView', thirdStyle),
-        Entry('Scrollable', thirdStyle),
-        Entry('ScrollbarPainter', thirdStyle),
-        Entry('ScrollMatrics', thirdStyle),
+        Entry('ScrollMetrics', thirdStyle),
         Entry('ScrollPhysics', thirdStyle),
         Entry('BoxScrollView', thirdStyle),
         Entry('CustomScrollView', thirdStyle),

@@ -109,6 +109,12 @@ class MyApp extends StatelessWidget {
           "SliverGrid": (BuildContext context) {
             return SliverGridWidget();
           },
+          "ScrollMetrics": (BuildContext context) {
+            return ScrollMetricsWidget();
+          },
+          "ScrollPhysics": (BuildContext context) {
+            return ScrollPhysicsWidget();
+          },
         });
   }
 }
