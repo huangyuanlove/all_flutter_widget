@@ -115,6 +115,24 @@ class MyApp extends StatelessWidget {
           "ScrollPhysics": (BuildContext context) {
             return ScrollPhysicsWidget();
           },
+          "CheckedPopupMenuItem": (BuildContext context) {
+            return SomeMenuWidget();
+          },
+          "DropdownMenuItem": (BuildContext context) {
+            return SomeMenuWidget();
+          },
+          "PopupMenuButton": (BuildContext context) {
+            return SomeMenuWidget();
+          },
+          "PopupMenuDivider": (BuildContext context) {
+            return SomeMenuWidget();
+          },
+          "PopupMenuEntry": (BuildContext context) {
+            return SomeMenuWidget();
+          },
+          "PopupMenuItem": (BuildContext context) {
+            return SomeMenuWidget();
+          },
         });
   }
 }

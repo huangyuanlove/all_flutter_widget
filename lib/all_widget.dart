@@ -92,12 +92,6 @@ final List<Entry> data = <Entry>[
       Entry('Scroll', secondStyle, <Entry>[
         Entry('ScrollMetrics', thirdStyle),
         Entry('ScrollPhysics', thirdStyle),
-        Entry('BoxScrollView', thirdStyle),
-        Entry('CustomScrollView', thirdStyle),
-        Entry('NestedScrollView', thirdStyle),
-      ]),
-      Entry('Tab', secondStyle, <Entry>[
-        Entry('Tab', thirdStyle),
       ]),
       Entry('Menu', secondStyle, <Entry>[
         Entry('CheckedPopupMenuItem', thirdStyle),
