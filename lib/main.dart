@@ -133,6 +133,23 @@ class MyApp extends StatelessWidget {
           "PopupMenuItem": (BuildContext context) {
             return SomeMenuWidget();
           },
+
+          "DayPicker": (BuildContext context) {
+            return SomePickWidget();
+          },
+          "MonthPicker": (BuildContext context) {
+            return SomePickWidget();
+          },
+           "YearPicker": (BuildContext context) {
+            return SomePickWidget();
+          },
+           "ShowdatePicker": (BuildContext context) {
+            return SomePickWidget();
+          },
+
+
+
+
         });
   }
 }

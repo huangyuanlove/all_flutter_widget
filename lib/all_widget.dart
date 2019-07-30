@@ -103,10 +103,6 @@ final List<Entry> data = <Entry>[
       ]),
       Entry('Pick', secondStyle, <Entry>[
         Entry('DayPicker', thirdStyle),
-        Entry('MonthPicker', thirdStyle),
-        Entry('YearPicker', thirdStyle),
-        Entry('ShowdatePicker', thirdStyle),
-        Entry('CityPicker', thirdStyle),
       ]),
       Entry('Chip', secondStyle, <Entry>[
         Entry('Chip', thirdStyle),

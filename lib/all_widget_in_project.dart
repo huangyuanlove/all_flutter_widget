@@ -24,3 +24,4 @@ export 'package:flutter_widget/all_widget/grid/sliver_grid_widget.dart';
 export 'package:flutter_widget/all_widget/scroll/scroll_metrics.dart';
 export 'package:flutter_widget/all_widget/scroll/scroll_physics_widget.dart';
 export 'package:flutter_widget/all_widget/menu/some_menu_widget.dart';
+export 'package:flutter_widget/all_widget/pick/some_pick_widget.dart';
