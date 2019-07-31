@@ -133,23 +133,39 @@ class MyApp extends StatelessWidget {
           "PopupMenuItem": (BuildContext context) {
             return SomeMenuWidget();
           },
-
           "DayPicker": (BuildContext context) {
             return SomePickWidget();
           },
           "MonthPicker": (BuildContext context) {
             return SomePickWidget();
           },
-           "YearPicker": (BuildContext context) {
+          "YearPicker": (BuildContext context) {
             return SomePickWidget();
           },
-           "ShowdatePicker": (BuildContext context) {
+          "ShowdatePicker": (BuildContext context) {
             return SomePickWidget();
           },
-
-
-
-
+          "Chip": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "ChipTheme": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "ChipThemeData": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "ChoiceChip": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "FilterChip": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "InputChip": (BuildContext context) {
+            return SomeChipWidget();
+          },
+          "RawChip": (BuildContext context) {
+            return SomeChipWidget();
+          },
         });
   }
 }
