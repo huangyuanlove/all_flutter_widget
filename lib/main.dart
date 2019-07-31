@@ -166,6 +166,12 @@ class MyApp extends StatelessWidget {
           "RawChip": (BuildContext context) {
             return SomeChipWidget();
           },
+          "LinearProgressIndicator": (BuildContext context) {
+            return SomeProgressWidget();
+          },
+          "CircularProgressIndicator": (BuildContext context) {
+            return SomeProgressWidget();
+          },
         });
   }
 }

@@ -113,9 +113,6 @@ final List<Entry> data = <Entry>[
         Entry('InputChip', thirdStyle),
         Entry('RawChip', thirdStyle),
       ]),
-      Entry('Panel', secondStyle, <Entry>[
-        Entry('ExpansionPanelList', thirdStyle),
-      ]),
       Entry('Progress', secondStyle, <Entry>[
         Entry('LinearProgressIndicator', thirdStyle),
         Entry('CircularProgressIndicator', thirdStyle),
