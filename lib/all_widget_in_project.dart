@@ -1,10 +1,10 @@
 library all_widget_lib;
+
 export 'package:flutter_widget/all_widget/form/check_box.dart';
 export 'package:flutter_widget/all_widget/form/button.dart';
 export 'package:flutter_widget/all_widget/form/slider_widget.dart';
 export 'package:flutter_widget/all_widget/form/switch_widget.dart';
 export 'package:flutter_widget/all_widget/frame/align_frame.dart';
-export 'package:flutter_widget/other/future_build_widget.dart';
 export 'package:flutter_widget/all_widget/frame/stack_widget.dart';
 export 'package:flutter_widget/all_widget/frame/container_widget.dart';
 export 'package:flutter_widget/all_widget/frame/box_widget/box_widget.dart';
@@ -28,3 +28,5 @@ export 'package:flutter_widget/all_widget/menu/some_menu_widget.dart';
 export 'package:flutter_widget/all_widget/pick/some_pick_widget.dart';
 export 'package:flutter_widget/all_widget/chip/some_chip_widget.dart';
 export 'package:flutter_widget/all_widget/progress/some_progress_widget.dart';
+export 'package:flutter_widget/other/animation/animation_page.dart';
+export 'package:flutter_widget/other/future_build_widget.dart';

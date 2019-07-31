@@ -119,41 +119,10 @@ final List<Entry> data = <Entry>[
       ]),
     ],
   ),
-//  Entry(
-//    'Themes',
-//    firstStyle,
-//    <Entry>[
-//      Entry('Material', secondStyle, <Entry>[
-//        Entry('MaterialApp', thirdStyle),
-//        Entry('MaterialColor', thirdStyle),
-//        Entry('MaterialButton', thirdStyle),
-//        Entry('MaterialPageRoter', thirdStyle),
-//        Entry('MaterialAccentColor', thirdStyle),
-//        Entry('MergeableMaterialItem', thirdStyle),
-//      ]),
-//      Entry('Cupertino', secondStyle, <Entry>[
-//        Entry('CupertinoApp', thirdStyle),
-//        Entry('CupertinoButton', thirdStyle),
-//        Entry('CupertinoColors', thirdStyle),
-//        Entry('CupertinoIcons', thirdStyle),
-//        Entry('CupertinoNavigationBar', thirdStyle),
-//        Entry('CupertinoPageRoute', thirdStyle),
-//        Entry('CupertinoPageScaffold', thirdStyle),
-//        Entry('CupertinoPicker', thirdStyle),
-//        Entry('CupertinoPopupSurface', thirdStyle),
-//        Entry('CupertinoScrollbar', thirdStyle),
-//        Entry('CupertinoSlider', thirdStyle),
-//        Entry('CupertinoSegmentedControl', thirdStyle),
-//        Entry('CupertinoSliverNavigationBar', thirdStyle),
-//        Entry('CupertinoSwitch', thirdStyle),
-//        Entry('CupertinoTabBar', thirdStyle),
-//        Entry('CupertinoTabScaffold', thirdStyle),
-//        Entry('CupertinoTimerPicker', thirdStyle),
-//      ]),
-//    ],
-//  ),
+
   Entry("Other",firstStyle,<Entry>[
-    Entry("FutureBuild",thirdStyle)
+    Entry("FutureBuild",thirdStyle),
+    Entry("Animation",thirdStyle),
   ]),
 ];
 

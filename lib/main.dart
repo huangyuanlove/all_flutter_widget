@@ -37,9 +37,6 @@ class MyApp extends StatelessWidget {
           "Column": (BuildContext context) {
             return AlignFrame();
           },
-          "FutureBuild": (BuildContext context) {
-            return FutureBuildWidget();
-          },
           "Stack": (BuildContext context) {
             return StackWidget();
           },
@@ -171,6 +168,12 @@ class MyApp extends StatelessWidget {
           },
           "CircularProgressIndicator": (BuildContext context) {
             return SomeProgressWidget();
+          },
+          "FutureBuild": (BuildContext context) {
+            return FutureBuildWidget();
+          },
+          "Animation": (BuildContext context) {
+            return AnimationPageWidget();
           },
         });
   }
