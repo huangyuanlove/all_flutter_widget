@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'RandomWordsWidget.dart';
-import 'CounterWidget.dart';
-import 'SwitchAndCheckBox.dart';
 import 'ImageViewPager.dart';
 import 'test_small_widget.dart';
 import 'will_pop_scope.dart';
@@ -15,6 +12,7 @@ import 'package:provider/provider.dart';
 import 'save_image_to_file.dart';
 import 'test_build_stateless.dart';
 import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_page.dart';
+
 class MyPageHome extends StatefulWidget {
   @override
   MyPageHomeState createState() => new MyPageHomeState();
@@ -23,12 +21,6 @@ class MyPageHome extends StatefulWidget {
 class MyPageHomeState extends State<MyPageHome> {
   int count = 0;
   GlobalKey scaffoldKey = new GlobalKey();
-
-  void _increase() {
-    setState(() {
-      count++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,28 +32,7 @@ class MyPageHomeState extends State<MyPageHome> {
       body: new Center(
         child: new ListView(
           children: <Widget>[
-            RandomWordsWidget(),
-
-            FlatButton(
-              child: Text("router"),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                  return new CounterWidget();
-                }));
-              },
-            ),
-            Text.rich(TextSpan(children: [
-              TextSpan(
-                text: "hello\n",
-                style: TextStyle(color: Colors.deepOrangeAccent),
-              ),
-              TextSpan(
-                  text: "http://flutter.github.io",
-                  style: TextStyle(color: Colors.blue))
-            ])),
-
-            FlatButton(
+            RaisedButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -69,16 +40,14 @@ class MyPageHomeState extends State<MyPageHome> {
               child: Text("Submit"),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0)),
-              onPressed: () => {
-                    Navigator.push(context,
-                        new MaterialPageRoute(builder: (context) {
-                      return ImageViewPager();
-                    }))
-                  },
+              onPressed: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                  return ImageViewPager();
+                }));
+              },
             ),
-
-            SwitchAndCheckBoxTestRoute(),
-            FlatButton(
+            RaisedButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
@@ -86,15 +55,13 @@ class MyPageHomeState extends State<MyPageHome> {
               child: Text("CustomScrollView"),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0)),
-              onPressed: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return TestSmallWidget();
-                    }))
-                  },
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return TestSmallWidget();
+                }));
+              },
             ),
-
-            FlatButton(
+            RaisedButton(
               child: Text("WillPopScopeTest"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -102,7 +69,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("InheritedWidgetTestRoute_one"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -110,7 +77,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("InheritedWidgetTestRoute_two"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -118,7 +85,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("Notification"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -126,7 +93,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("TestDeliverValue"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -136,8 +103,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-
-            FlatButton(
+            RaisedButton(
               child: Text("TestProvider"),
               onPressed: () {
                 final counter = CounterModel();
@@ -155,11 +121,9 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("save_image_to_file"),
               onPressed: () {
-                final counter = CounterModel();
-                final textSize = 48;
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SaveImageWidget();
                 })).then((onValue) {
@@ -167,7 +131,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("build stateless widget"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -177,8 +141,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-
-            FlatButton(
+            RaisedButton(
               child: Text("named router"),
               onPressed: () {
                 Navigator.pushNamed(context, "new_page",
@@ -188,7 +151,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("a_router_widget"),
               onPressed: () {
                 Navigator.pushNamed(context, "a_router_widget").then((value) {
@@ -196,21 +159,16 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            FlatButton(
+            RaisedButton(
               child: Text("SwipeListItemDemoPage"),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SwipeListItemDemoPage();
                 }));
               },
             ),
           ],
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _increase,
-        child: new Icon(Icons.add),
-        tooltip: "tip tip",
       ),
     );
   }
