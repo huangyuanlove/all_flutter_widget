@@ -12,6 +12,9 @@ import 'package:provider/provider.dart';
 import 'save_image_to_file.dart';
 import 'test_build_stateless.dart';
 import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_page.dart';
+import 'bloc/count_bloc_widget.dart';
+import 'bloc/bloc_base.dart';
+import 'bloc/count_bloc.dart';
 
 class MyPageHome extends StatefulWidget {
   @override
@@ -47,6 +50,28 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
+
+            RaisedButton(
+              color: Colors.blue,
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              child: Text("TestBLoC"),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+
+                  return BLoCProvider<CountBLoC>(
+                    bloc: CountBLoC(),
+                    child: CountBLoCWidget(),
+                  );
+
+                }));
+              },
+            ),
+
+
             RaisedButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
