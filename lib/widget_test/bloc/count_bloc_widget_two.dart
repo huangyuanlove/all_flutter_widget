@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'count_bloc.dart';
 import 'bloc_base.dart';
-import 'count_bloc_widget_two.dart';
-class CountBLoCWidget extends StatefulWidget {
+
+class CountBLoCWidgetTwo extends StatefulWidget {
   @override
   _CountBLoCWidgetState createState() => _CountBLoCWidgetState();
 }
 
-class _CountBLoCWidgetState extends State<CountBLoCWidget> {
-  CountBLoC countBLoC;
+class _CountBLoCWidgetState extends State<CountBLoCWidgetTwo> {
+//  CountBLoC countBLoC = CountBLoC();
+  CountBLoC countBLoC ;
   @override
   Widget build(BuildContext context) {
     countBLoC = BLoCProvider.of<CountBLoC>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("count page one"),
+        title: Text("count page two"),
       ),
       body: Container(
         child: Column(
@@ -31,18 +32,7 @@ class _CountBLoCWidgetState extends State<CountBLoCWidget> {
               },
             ),
 
-            RaisedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                print(countBLoC.toString());
-                return  BLoCProvider<CountBLoC>(
-                  bloc: countBLoC,
-                  child:  CountBLoCWidgetTwo(),
-                );
-
-
-
-              }));
-            },child: Icon(Icons.navigate_next),)
+            RaisedButton(onPressed: (){},child: Icon(Icons.navigate_next),)
 
 
           ],
@@ -58,7 +48,7 @@ class _CountBLoCWidgetState extends State<CountBLoCWidget> {
   @override
   void dispose() {
     super.dispose();
-    countBLoC.dispose();
+//    countBLoC.dispose();
 
   }
 }
