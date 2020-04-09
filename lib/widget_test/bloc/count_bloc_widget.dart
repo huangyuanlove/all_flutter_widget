@@ -8,10 +8,11 @@ class CountBLoCWidget extends StatefulWidget {
 }
 
 class _CountBLoCWidgetState extends State<CountBLoCWidget> {
-  CountBLoC countBLoC;
+  CountBLoC countBLoC=CountBLoC();
   @override
   Widget build(BuildContext context) {
     countBLoC = BLoCProvider.of<CountBLoC>(context);
+
 
     return Scaffold(
       appBar: AppBar(

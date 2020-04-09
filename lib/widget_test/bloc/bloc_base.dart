@@ -28,11 +28,11 @@ class BLoCProvider<T extends BLoCBase> extends StatefulWidget{
 }
 
 class _BLoCProviderState<T> extends State<BLoCProvider<BLoCBase>>{
-//  @override
-//  void dispose(){
-//    widget.bloc.dispose();
-//    super.dispose();
-//  }
+  @override
+  void dispose(){
+    widget.bloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context){
