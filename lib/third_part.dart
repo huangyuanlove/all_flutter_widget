@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/third_part/fl_charts/fl_chart.dart';
 import 'third_part/charts/chart_page.dart';
-import 'third_part/fl_chart/FLChart.dart';
 class ThirdPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ThirdPart extends StatelessWidget {
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
               splashColor: Colors.grey,
-              child: Text("charts_flutter"),
+              child: Text("fl_chart"),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0)),
               onPressed: () {
