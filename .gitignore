@@ -7,3 +7,6 @@ test
 .metadata
 .packages
 pubspec.lock
+.dart_tool
+.flutter-plugins-dependencies
+.flutter-plugins
