@@ -15,6 +15,8 @@ import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_p
 import 'bloc/count_bloc_widget.dart';
 import 'bloc/bloc_base.dart';
 import 'bloc/count_bloc.dart';
+import 'gesture/gesture_test.dart';
+import 'custom_error_widget.dart';
 
 class MyPageHome extends StatefulWidget {
   @override
@@ -189,6 +191,22 @@ class MyPageHomeState extends State<MyPageHome> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SwipeListItemDemoPage();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text("手势竞技场"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return GestureTest();
+                }));
+              },
+            ),
+            RaisedButton(
+              child: Text("自定义错误页面"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return TestCustomErrorWidget();
                 }));
               },
             ),

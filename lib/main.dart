@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'all_widget.dart';
@@ -7,12 +9,36 @@ import 'all_widget_in_project.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
-  runApp(MyApp());
+
+
+
+  FlutterError.onError = (FlutterErrorDetails details) async {
+    Zone.current.handleUncaughtError(details.exception, details.stack);
+  };
+
+  runZoned<Future<Null>>(() async {
+    runApp(MyApp());
+  }, onError: (error, stackTrace) async {
+    //在这里处理异常
+    print("-------");
+    print(error);
+    print(stackTrace);
+    print("-------");
+  });
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
+      return Scaffold(
+        body: Center(
+          child: Text("${flutterErrorDetails.exception}"),
+        ),
+      );
+    };
+
     return MaterialApp(
         theme: ThemeData(
           primarySwatch: Colors.blue,
