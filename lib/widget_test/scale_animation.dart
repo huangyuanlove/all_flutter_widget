@@ -9,8 +9,8 @@ class ScaleAnimation extends StatefulWidget {
 
 class ScaleAnimationState extends State<ScaleAnimation>
     with TickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController animationController;
+ late Animation<double> animation;
+ late AnimationController animationController;
 
   @override
   void initState() {

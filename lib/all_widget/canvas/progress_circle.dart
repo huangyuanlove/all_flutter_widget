@@ -6,9 +6,9 @@ class ProgressCircle extends StatefulWidget {
 }
 
 class _ProgressCircleState extends State<ProgressCircle> with SingleTickerProviderStateMixin{
-  Animation<double> _doubleAnimation;
-  AnimationController _controller;
-  CurvedAnimation curvedAnimation;
+ late Animation<double> _doubleAnimation;
+ late AnimationController _controller;
+ late  CurvedAnimation curvedAnimation;
   @override
   void initState() {
     super.initState();
@@ -66,8 +66,8 @@ class _ProgressCircleState extends State<ProgressCircle> with SingleTickerProvid
 class CircleProgressPainter extends CustomPainter{
 
   var progress;
-  Paint _paintBackground;
-  Paint _paintFore;
+  late Paint _paintBackground;
+ late Paint _paintFore;
 
   CircleProgressPainter(this.progress){
     _paintBackground = Paint()

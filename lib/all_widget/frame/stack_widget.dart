@@ -11,7 +11,6 @@ class _StackWidgetState extends State<StackWidget> {
     return Scaffold(
       appBar: AppBar(title: Text("Stack"),),
       body: Stack(
-        alignment:AlignmentDirectional.lerp(AlignmentDirectional.topStart, AlignmentDirectional.bottomEnd, 0.2),
         children: <Widget>[
           SizedBox(
             height: 200,

@@ -6,7 +6,7 @@ class ListViewWidget extends StatefulWidget {
 }
 
 class _ListViewWidgetState extends State<ListViewWidget> {
-  List<String> _list = List();
+  List<String> _list = [];
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
           color: Colors.primaries[index % Colors.primaries.length],
           child: Center(
             child: Text('${_list[index]}',
-                style: Theme.of(context).textTheme.display1),
+                style: Theme.of(context).textTheme.displayMedium),
           ),
         );
       }),

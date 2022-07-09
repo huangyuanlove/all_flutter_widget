@@ -8,7 +8,7 @@ class SpacingWidget extends StatefulWidget {
 class _SpacingWidgetState extends State<SpacingWidget> {
 
 
-  double paddingValue;
+  double paddingValue = 0;
 
   void initState() {
     super.initState();

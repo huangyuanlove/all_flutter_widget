@@ -24,7 +24,7 @@ class _ScrollMetricsState extends State<ScrollMetricsWidget> {
                   _progress = "${(progress * 100).toInt()}%";
                 });
                 print("BottomEdge: ${notification.metrics.extentAfter == 0}");
-                //return true; //放开此行注释后，进度条将失效
+                return true; //放开此行注释后，进度条将失效
               },
               child: Stack(
                 alignment: Alignment.center,

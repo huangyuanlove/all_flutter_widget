@@ -7,19 +7,19 @@ class TweenWidgetPage extends StatefulWidget {
 
 class _TweenWidgetPageState extends State<TweenWidgetPage>
     with TickerProviderStateMixin {
-  Animation<double> scaleAnimation;
-  AnimationController scaleAnimationController;
-  AnimationStatus scaleAnimationStatus;
-  double scaleAnimationValue;
+ late Animation<double> scaleAnimation;
+ late AnimationController scaleAnimationController;
+ late AnimationStatus scaleAnimationStatus;
+ late double scaleAnimationValue;
 
 
-  Animation<Color> colorAnimation;
-  AnimationController colorAnimationController;
-  AnimationStatus colorAnimationStatus;
+ late Animation<Color?> colorAnimation;
+ late AnimationController colorAnimationController;
+ late AnimationStatus colorAnimationStatus;
   Color colorAnimationValue = Colors.red;
 
 
-   Animation curve ;
+ late  Animation curve ;
 
 
 
@@ -33,7 +33,7 @@ class _TweenWidgetPageState extends State<TweenWidgetPage>
     curve  = CurvedAnimation(parent: scaleAnimationController, curve: Curves.fastLinearToSlowEaseIn);
 
 
-    scaleAnimation = Tween<double>(begin: 0, end: 300).animate(curve);
+    scaleAnimation = Tween<double>(begin: 0, end: 300).animate(curve as Animation<double>);
     scaleAnimation.addListener(() {
       setState(() {
         scaleAnimationValue = scaleAnimation.value;
@@ -51,7 +51,7 @@ class _TweenWidgetPageState extends State<TweenWidgetPage>
     colorAnimation = ColorTween(begin: Colors.blue,end:Colors.red).animate(colorAnimationController);
     colorAnimation.addListener((){
       setState(() {
-        colorAnimationValue = colorAnimation.value;
+        colorAnimationValue = colorAnimation.value!;
       });
     });
     colorAnimation.addStatusListener((AnimationStatus state){

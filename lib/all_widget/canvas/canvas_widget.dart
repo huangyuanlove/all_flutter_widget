@@ -31,7 +31,7 @@ class _CanvasWidgetState extends State<CanvasWidget> {
 }
 
 class DrawPainter extends CustomPainter {
-  Paint painter;
+ late Paint painter;
 
   DrawPainter() {
     //    Paint painter = Paint()

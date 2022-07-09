@@ -26,7 +26,7 @@ class _SomePickWidgetState extends State<SomePickWidget> {
                   context: context,
                   initialDate: _date,
                   firstDate: DateTime(2015, 8),
-                  lastDate: DateTime(2101));
+                  lastDate: DateTime(2101))??DateTime.now();
 
               if (picked != null && picked != _date) {
                 setState(() {
@@ -39,7 +39,7 @@ class _SomePickWidgetState extends State<SomePickWidget> {
           RaisedButton(
             onPressed: () async {
               final TimeOfDay picked =
-                  await showTimePicker(context: context, initialTime: _time);
+                  await showTimePicker(context: context, initialTime: _time)??TimeOfDay.fromDateTime(DateTime.now());
 
               if (picked != null && picked != _time) {
                 setState(() {

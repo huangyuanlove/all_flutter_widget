@@ -18,10 +18,11 @@ class NotificationWidgetRouteState extends State<NotificationWidgetRoute>{
 
 
     return NotificationListener<MyNotification>(
-      onNotification: (notification){
+      onNotification: (notification)  {
         setState(() {
           _msg += notification.msg;
         });
+        return true;
       },
       child:Column(
         mainAxisSize: MainAxisSize.min,

@@ -8,7 +8,7 @@ class DialogWidget extends StatefulWidget {
 class _DialogWidgetState extends State<DialogWidget> {
   @override
   Widget build(BuildContext context) {
-    List<Widget> dialogItem = List();
+    List<Widget> dialogItem = [];
     for (int i = 0; i < 30; i++) {
       dialogItem.add(Text("item at $i"));
     }

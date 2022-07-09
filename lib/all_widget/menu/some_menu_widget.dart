@@ -8,26 +8,26 @@ class SomeMenuWidget extends StatefulWidget {
 class _SomeMenuWidgetState extends State<SomeMenuWidget> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  List<String> _checkedValues;
+  List<String> _checkedValues =[];
   final String _checkedValue1 = 'One';
   final String _checkedValue2 = 'Two';
   final String _checkedValue3 = 'Free';
   final String _checkedValue4 = 'Four';
 
   String dropDown1Value = "Free";
-  String dropdown2Value;
+  String dropdown2Value ="";
   String dropdown3Value = 'Four';
 
   final String _simpleValue1 = 'Menu item value one';
   final String _simpleValue2 = 'Menu item value two';
   final String _simpleValue3 = 'Menu item value three';
-  String _simpleValue;
+  String _simpleValue="";
 
   void showPopupMenuSelection(String value) {
     if (<String>[_simpleValue1, _simpleValue2, _simpleValue3].contains(value))
       _simpleValue = value;
     _scaffoldKey.currentState
-        .showSnackBar(SnackBar(content: Text('You selected: $value')));
+        ?.showSnackBar(SnackBar(content: Text('You selected: $value')));
   }
 
   @override
@@ -46,8 +46,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
     } else {
       _checkedValues.add(value);
     }
-    _scaffoldKey.currentState
-        .showSnackBar(SnackBar(content: Text('Checked $_checkedValues')));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Checked $_checkedValues')));
   }
 
   void checkParams() {}
@@ -98,7 +97,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
               style:
                   TextStyle(color: Colors.white, backgroundColor: Colors.red),
             ),
-            trailing: DropdownButton(
+            trailing: DropdownButton<String>(
               items: <String>['One', 'Two', 'Free', 'Four']
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
@@ -106,11 +105,12 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
                   child: Text(value),
                 );
               }).toList(),
-              onChanged: (String value) {
-                setState(() {
-                  dropDown1Value = value;
-                });
-              },
+              onChanged:(String? value){
+                  setState(() {
+                    dropDown1Value = value??"";
+                  });
+              } ,
+
               value: dropDown1Value,
             ),
           ),
@@ -119,9 +119,9 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
             trailing: DropdownButton<String>(
               value: dropdown2Value,
               hint: const Text('Choose'),
-              onChanged: (String newValue) {
+              onChanged: (String? newValue) {
                 setState(() {
-                  dropdown2Value = newValue;
+                  dropdown2Value = newValue??"";
                 });
               },
               items: <String>['One', 'Two', 'Free', 'Four']
@@ -137,9 +137,9 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
             title: const Text('Scrollable dropdown:'),
             trailing: DropdownButton<String>(
               value: dropdown3Value,
-              onChanged: (String newValue) {
+              onChanged: (String? newValue) {
                 setState(() {
-                  dropdown3Value = newValue;
+                  dropdown3Value = newValue??"";
                 });
               },
               items: <String>[

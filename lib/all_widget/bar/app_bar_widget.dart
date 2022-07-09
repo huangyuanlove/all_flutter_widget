@@ -22,8 +22,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
         actions: [
           SnackBarWithoutAction(),
           SnackBarWithAction(),
+
           IconButton(icon: Icon(Icons.speaker_notes),onPressed: (){
-            _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("通过GlobalKey呼出SnakeBar")));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("通过GlobalKey呼出SnakeBar")));
           },)
         ],
         flexibleSpace: Container(
@@ -34,8 +35,8 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       ),
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
-            icon: Icon(Icons.android), title: Text("android")),
-        BottomNavigationBarItem(icon: Icon(Icons.done), title: Text("done")),
+            icon: Icon(Icons.android), label: "android"),
+        BottomNavigationBarItem(icon: Icon(Icons.done), label: "done"),
       ]),
       bottomSheet: Text("bottom sheet"),
       body: GestureDetector(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TestTextWidget extends StatelessWidget{
 
-  TestTextWidget({@required this.logTag,@required this.child});
+  TestTextWidget({required this.logTag,required this.child});
   final String logTag;
   final Widget child;
 

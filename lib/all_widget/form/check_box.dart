@@ -68,7 +68,7 @@ class _CheckBoxDefaultState extends State<_CheckBoxDefault> {
     return Checkbox(
       onChanged: (value) {
         setState(() {
-          isChecked = value;
+          isChecked = value??false;
         });
       },
       value: isChecked,
@@ -92,7 +92,7 @@ class __CheckBoxListTileDefaultState extends State<_CheckBoxListTileDefault> {
       activeColor: Colors.lightGreenAccent,
       onChanged: (value) {
         setState(() {
-          isChecked = value;
+          isChecked = value??false;
         });
       },
       title: Text("title"),
@@ -119,31 +119,31 @@ class __RadioButtonState extends State<_RadioButton> {
         color: Colors.tealAccent,
         child: Row(
           children: <Widget>[
-            Radio(
+            Radio<int>(
                 value: 0,
                 groupValue: groupValue,
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue = value;
+                    groupValue =value??-1 ;
                   });
                 }),
-            Radio(
+            Radio<int>(
                 value: 1,
                 groupValue: groupValue,
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue = value;
+                    groupValue = value??-1;
                   });
                 }),
-            Radio(
+            Radio<int>(
                 value: 2,
                 groupValue: groupValue,
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue = value;
+                    groupValue = value??-1;
                   });
                 }),
           ],
@@ -166,36 +166,36 @@ class __RadioListTileState extends State<_RadioListTile> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        RadioListTile(
+        RadioListTile<int>(
           value: 0,
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value;
+              groupValue = value??-1;
             });
           },
           activeColor: Colors.tealAccent,
           title: Text("title"),
           subtitle: Text("subtitle"),
         ),
-        RadioListTile(
+        RadioListTile<int>(
           value: 1,
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value;
+              groupValue = value??-1;
             });
           },
           activeColor: Colors.tealAccent,
           title: Text("title"),
           subtitle: Text("subtitle"),
         ),
-        RadioListTile(
+        RadioListTile<int>(
           value: 2,
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value;
+              groupValue = value??-1;
             });
           },
           activeColor: Colors.tealAccent,

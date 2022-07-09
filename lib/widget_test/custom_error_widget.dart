@@ -15,7 +15,7 @@ class TestCustomErrorWidget extends StatelessWidget{
     print(time);
 
     if(time%2 ==0){
-      show_text = null;
+      show_text = "";
     }
 
 
@@ -30,6 +30,7 @@ class TestCustomErrorWidget extends StatelessWidget{
 
               color: Theme.of(context).primaryColor,
 
+              onPressed: () {  },
               child: Text(show_text),
 
             ),

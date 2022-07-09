@@ -9,7 +9,7 @@ class ButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<ButtonWidget> {
   String buttonShapeType = 'border'; // 边框类型
 
-  String dropdownButtonValue;
+  String dropdownButtonValue="";
 
   void setButtonShapeType() {
     String _buttonShapeType =
@@ -235,55 +235,29 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                 // Perform some action
                 print("点击了自定义RawMaterialButton");
               }),
-          DropdownButton(
+          DropdownButton<String>(
             hint: Text("请选择一个名字"),
             value: dropdownButtonValue,
             onChanged: (value) {
               print("选择了  $value");
               setState(() {
-                dropdownButtonValue = value;
+                dropdownButtonValue = value??"选择为空";
               });
             },
             items: buildDropdownItems(),
           ),
-          OutlineButton(
+          OutlinedButton(
               child: Text("默认OutlineButton"),
               onPressed: () {
                 print("点击了OutlineButton");
               }),
-          OutlineButton.icon(
+          OutlinedButton.icon(
               onPressed: () {},
               icon: Icon(Icons.android),
               label: Text("带有icon的OutlineButton")),
-          OutlineButton(
+          OutlinedButton(
             // 文本内容
               child: Text("自定义OutlineButton", semanticsLabel: 'FLAT BUTTON 2'),
-              // 边框的颜色,颜色也可以走主题色 Theme.of(context).primaryColor
-              borderSide: BorderSide(color: _randomColor(),width:Random.secure().nextInt(10).toDouble()),
-              // 按钮颜色
-              color: _randomColor(),
-              // 按钮失效时边框颜色
-              disabledBorderColor: Colors.red,
-              highlightedBorderColor:Colors.black54,
-              // 高亮时的背景色
-              highlightColor: Colors.yellow,
-              // 失效时的背景色
-              //disabledColor: Colors.grey,
-              // 该按钮上的文字颜色，但是前提是不设置字体自身的颜色时才会起作用
-              textColor: _randomColor(),
-              // 按钮失效时的文字颜色，同样的不能使用文本自己的样式或者颜色时才会起作用
-              disabledTextColor: _randomColor(),
-              // 按钮主题,主要用于与ButtonTheme和ButtonThemeData一起使用来定义按钮的基色,OutlineButton，OutlineButton，OutlineButton，它们是基于环境ButtonTheme配置的
-              //ButtonTextTheme.accent，使用模版颜色的;ButtonTextTheme.normal，按钮文本是黑色或白色取决于。ThemeData.brightness;ButtonTextTheme.primary，按钮文本基于。ThemeData.primaryColor.
-              textTheme: ButtonTextTheme.normal,
-              // 按钮内部,墨汁飞溅的颜色,点击按钮时的渐变背景色，当你不设置高亮背景时才会看的更清楚
-              splashColor: _randomColor(),
-              // 抗锯齿能力,抗锯齿等级依次递增,none（默认),hardEdge,antiAliasWithSaveLayer,antiAlias
-              clipBehavior: Clip.antiAlias,
-              padding:  EdgeInsets.only(bottom: 5.0, top: 5.0, left: 30.0, right: 30.0),
-              //高亮时候的阴影
-              highlightElevation: 10.0,
-              shape: drawShape(buttonShapeType), // 在Outline 里只能设置圆角,边框用borderSide
               // OutlineButton 的点击事件
               onPressed: () {
                 // Perform some action
@@ -294,16 +268,16 @@ class _ButtonWidgetState extends State<ButtonWidget> {
     );
   }
 
-  List<DropdownMenuItem> buildDropdownItems() {
-    List<DropdownMenuItem> items = [];
-    final DropdownMenuItem item1 =
-        DropdownMenuItem(value: '张三', child: Text('张三'));
-    final DropdownMenuItem item2 =
-        DropdownMenuItem(value: '李四', child: Text('李四'));
-    final DropdownMenuItem item3 =
-        DropdownMenuItem(value: '王二', child: Text('王二'));
-    final DropdownMenuItem item4 =
-        DropdownMenuItem(value: '麻子', child: Text('麻子'));
+  List<DropdownMenuItem<String>> buildDropdownItems() {
+    List<DropdownMenuItem<String>> items = [];
+    final DropdownMenuItem<String> item1 =
+        DropdownMenuItem<String>(value: '张三', child: Text('张三'));
+    final DropdownMenuItem<String> item2 =
+        DropdownMenuItem<String>(value: '李四', child: Text('李四'));
+    final DropdownMenuItem<String> item3 =
+        DropdownMenuItem<String>(value: '王二', child: Text('王二'));
+    final DropdownMenuItem<String> item4 =
+        DropdownMenuItem<String>(value: '麻子', child: Text('麻子'));
     items.add(item1);
     items.add(item2);
     items.add(item3);
@@ -325,7 +299,6 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           color: _color,
           style: BorderStyle.solid,
         );
-        break;
       case 'radius':
         return RoundedRectangleBorder(
           side: BorderSide(
@@ -341,9 +314,13 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             bottomRight: Radius.circular(radiusWidth),
           ),
         );
-        break;
       default:
-        return null;
+        return   Border.all(
+          // 设置边框样式
+          width: borderWidth,
+          color: _color,
+          style: BorderStyle.solid,
+        );;
     }
   }
 

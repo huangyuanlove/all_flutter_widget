@@ -12,9 +12,9 @@ void main() {
 
 
 
-  FlutterError.onError = (FlutterErrorDetails details) async {
-    Zone.current.handleUncaughtError(details.exception, details.stack);
-  };
+  // FlutterError.onError = (FlutterErrorDetails details) async {
+  //   Zone.current.handleUncaughtError(details.exception, details.stack);
+  // };
 
   runZoned<Future<Null>>(() async {
     runApp(MyApp());
@@ -219,11 +219,11 @@ class _HomeWidgetState extends State<HomeWidget> {
   void initState() {
     super.initState();
     _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.widgets), title: Text("控件")));
+        BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "控件"));
     _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.build), title: Text("Test")));
+        BottomNavigationBarItem(icon: Icon(Icons.build), label: "Test"));
     _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.all_out), title: Text("三方库")));
+        BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
 
     bodyChildren.add(AllWidget());
     bodyChildren.add(AppTestWidget());

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TestDeliverValueWidget extends StatelessWidget{
 
-  TestDeliverValueWidget({Key key, @required this.value}):super(key:key );
+  TestDeliverValueWidget({Key? key, required this.value}):super(key:key );
 
   final String value;
 

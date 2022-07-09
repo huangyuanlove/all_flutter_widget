@@ -71,7 +71,7 @@ class SlideMenu extends StatefulWidget {
   final Widget child;
   final List<Widget> menuItems;
 
-  SlideMenu({this.child, this.menuItems});
+  SlideMenu({required this.child, required this.menuItems});
 
   @override
   _SlideMenuState createState() => new _SlideMenuState();
@@ -79,7 +79,7 @@ class SlideMenu extends StatefulWidget {
 
 class _SlideMenuState extends State<SlideMenu>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+late  AnimationController _controller;
 
   @override
   initState() {
@@ -103,7 +103,11 @@ class _SlideMenuState extends State<SlideMenu>
       onHorizontalDragUpdate: (data) {
         // we can access context.size here
         setState(() {
-          _controller.value -= data.primaryDelta / context.size.width;
+          double width = 1;
+          if(context.size!=null){
+            width = context.size!.width;
+          }
+          _controller.value -= data.primaryDelta??0 / width;
         });
       },
       onHorizontalDragEnd: (data) {
@@ -111,11 +115,11 @@ class _SlideMenuState extends State<SlideMenu>
         print("速度:${data.primaryVelocity}, value:${_controller.value}" );
 
 
-        if (data.primaryVelocity > 500 )
+        if (data.primaryVelocity! > 500 )
           _controller
               .animateTo(.0); //close menu on fast swipe in the right direction
         else if (_controller.value >= .2 ||
-            data.primaryVelocity < -500) // fully open if dragged a lot to left or on fast swipe to left
+            data.primaryVelocity! < -500) // fully open if dragged a lot to left or on fast swipe to left
           _controller.animateTo(1.0);
         else // close if none of above
           _controller.animateTo(.0);

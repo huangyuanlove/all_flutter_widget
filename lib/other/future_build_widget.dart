@@ -56,7 +56,7 @@ class _FutureBuildWidgetState extends State<FutureBuildWidget> {
         if (snapshot.hasError) return Text('Error: ${snapshot.error}');
         return Text(snapshot.data.toString());
       default:
-        return null;
+        return Text('默认');
     }
   }
 

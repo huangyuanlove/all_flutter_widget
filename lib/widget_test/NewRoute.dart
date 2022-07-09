@@ -15,8 +15,9 @@ class NewRoute extends StatelessWidget {
           child: Center(
             child: Text(text),
           ),
-          onWillPop: () {
+          onWillPop: () async {
             Navigator.of(context).pop("返回时携带的数据");
+            return true;
           }),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {

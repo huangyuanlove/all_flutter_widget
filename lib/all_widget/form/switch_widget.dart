@@ -117,7 +117,7 @@ class _DefaultAnimatedSwitcherState extends State<DefaultAnimatedSwitcher> {
             // child each time the count changes, so that it will begin its animation
             // when the count changes.
             key: ValueKey<int>(_count),
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.displaySmall,
           ),
         ),
         AnimatedSwitcher(
@@ -131,7 +131,7 @@ class _DefaultAnimatedSwitcherState extends State<DefaultAnimatedSwitcher> {
             // child each time the count changes, so that it will begin its animation
             // when the count changes.
             key: ValueKey<int>(_count),
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.displayMedium,
           ),
         ),
         AnimatedSwitcher(
@@ -145,7 +145,7 @@ class _DefaultAnimatedSwitcherState extends State<DefaultAnimatedSwitcher> {
             // child each time the count changes, so that it will begin its animation
             // when the count changes.
             key: ValueKey<int>(_count),
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
         ),
         RaisedButton(

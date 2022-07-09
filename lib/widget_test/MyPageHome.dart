@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'ImageViewPager.dart';
 import 'test_small_widget.dart';
 import 'will_pop_scope.dart';
-import 'package:flutter_widget/widget_test/inherited_widget_test/one/inherited_widget_test_route.dart';
-import 'package:flutter_widget/widget_test/inherited_widget_test/two/inherited_widget_in_single_page.dart';
 import 'package:flutter_widget/widget_test/notification_test/notification_test_widget_route.dart';
 import 'test_deliver_value.dart';
 import 'package:flutter_widget/widget_test/provider/counter_model_widget.dart';
@@ -12,9 +9,6 @@ import 'package:provider/provider.dart';
 import 'save_image_to_file.dart';
 import 'test_build_stateless.dart';
 import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_page.dart';
-import 'bloc/count_bloc_widget.dart';
-import 'bloc/bloc_base.dart';
-import 'bloc/count_bloc.dart';
 import 'gesture/gesture_test.dart';
 import 'custom_error_widget.dart';
 
@@ -37,42 +31,6 @@ class MyPageHomeState extends State<MyPageHome> {
       body: new Center(
         child: new ListView(
           children: <Widget>[
-            RaisedButton(
-              color: Colors.blue,
-              highlightColor: Colors.blue[700],
-              colorBrightness: Brightness.dark,
-              splashColor: Colors.grey,
-              child: Text("Submit"),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0)),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                  return ImageViewPager();
-                }));
-              },
-            ),
-
-            RaisedButton(
-              color: Colors.blue,
-              highlightColor: Colors.blue[700],
-              colorBrightness: Brightness.dark,
-              splashColor: Colors.grey,
-              child: Text("TestBLoC"),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0)),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-
-                  return BLoCProvider<CountBLoC>(
-                    bloc: CountBLoC(),
-                    child: CountBLoCWidget(),
-                  );
-
-                }));
-              },
-            ),
-
 
             RaisedButton(
               color: Colors.blue,
@@ -96,22 +54,7 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            RaisedButton(
-              child: Text("InheritedWidgetTestRoute_one"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return InheritedWidgetTestRoute();
-                }));
-              },
-            ),
-            RaisedButton(
-              child: Text("InheritedWidgetTestRoute_two"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return InheritedWidgetInSinglePage();
-                }));
-              },
-            ),
+
             RaisedButton(
               child: Text("Notification"),
               onPressed: () {

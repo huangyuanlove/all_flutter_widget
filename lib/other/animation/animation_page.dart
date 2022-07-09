@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'tween_widget_page.dart';
-import 'random_ball/random_ball_widget.dart';
 
 class AnimationPageWidget extends StatefulWidget {
   @override
@@ -25,15 +24,6 @@ class _AnimationPageWidgetState extends State<AnimationPageWidget> {
             },
             child: Text("补间动画(Tween)"),
           ),
-          RaisedButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext context) {
-                return RandomBallWidget();
-              }));
-            },
-            child: Text("random ball"),
-          )
         ],
       ),
     );

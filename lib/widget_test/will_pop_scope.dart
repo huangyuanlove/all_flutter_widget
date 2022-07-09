@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class WillPopScopeTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    DateTime _lastPressedAt;
+    DateTime _lastPressedAt= DateTime.now();
     return WillPopScope(
         child: Container(
           alignment: Alignment.center,

@@ -22,8 +22,9 @@ class _ScrollPhysicsState extends State<ScrollPhysicsWidget> {
           builder: (context, constraints) => NotificationListener(
             onNotification: (ScrollNotification note) {
               setState(() {
-                _currentPage = _pageController.page;
+                _currentPage = _pageController.page??0;
               });
+              return true;
             },
             child: PageView.custom(
               physics: const PageScrollPhysics(
@@ -48,7 +49,7 @@ class _ScrollPhysicsState extends State<ScrollPhysicsWidget> {
 
 
 class _SimplePage extends StatelessWidget {
-  _SimplePage(this.data, {Key key, this.parallaxOffset = 0.0})
+  _SimplePage(this.data, {Key? key, this.parallaxOffset = 0.0})
       : super(key: key);
 
   final String data;

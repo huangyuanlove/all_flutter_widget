@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class SimpleListView extends StatefulWidget {
-  SimpleListView({Key key}) : super(key: key);
+  SimpleListView({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
