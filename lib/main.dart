@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'all_widget.dart';
 import 'third_part.dart';
 import 'package:flutter_widget/widget_test/main.dart';
@@ -10,21 +11,25 @@ import 'all_widget_in_project.dart';
 void main() {
 //  debugPaintSizeEnabled = true;
 
-
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    )
+  );
 
   // FlutterError.onError = (FlutterErrorDetails details) async {
   //   Zone.current.handleUncaughtError(details.exception, details.stack);
   // };
 
-  runZoned<Future<Null>>(() async {
-    runApp(MyApp());
-  }, onError: (error, stackTrace) async {
-    //在这里处理异常
-    print("-------");
-    print(error);
-    print(stackTrace);
-    print("-------");
-  });
+  // runZoned<Future<Null>>(() async {
+  //   runApp(MyApp());
+  // }, onError: (error, stackTrace) async {
+  //   //在这里处理异常
+  //   print("-------");
+  //   print(error);
+  //   print(stackTrace);
+  //   print("-------");
+  // });
 }
 
 class MyApp extends StatelessWidget {
