@@ -47,7 +47,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
                         fontSize: 16.0,
                       )),
                   background: Image.network(
-                    "http://pic31.nipic.com/20130801/11604791_100539834000_2.jpg",
+                    "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201908%2F21%2F20190821090839_syest.thumb.400_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1676171722&t=46ef91f79b2ab00c31704e17e626940e",
                     fit: BoxFit.fill,
                   )),
               actions: <Widget>[

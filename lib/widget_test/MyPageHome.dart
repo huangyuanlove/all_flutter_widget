@@ -32,21 +32,18 @@ class MyPageHomeState extends State<MyPageHome> {
         child: new ListView(
           children: <Widget>[
 
-            RaisedButton(
-              color: Colors.blue,
-              highlightColor: Colors.blue[700],
-              colorBrightness: Brightness.dark,
-              splashColor: Colors.grey,
+            ElevatedButton(
+
               child: Text("CustomScrollView"),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0)),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return TestSmallWidget();
                 }));
               },
+
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("WillPopScopeTest"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -54,8 +51,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("Notification"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -63,7 +60,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("TestDeliverValue"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -73,7 +71,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("TestProvider"),
               onPressed: () {
                 final counter = CounterModel();
@@ -91,7 +90,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("save_image_to_file"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -101,7 +101,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("build stateless widget"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -111,7 +112,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("named router"),
               onPressed: () {
                 Navigator.pushNamed(context, "new_page",
@@ -121,7 +123,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("a_router_widget"),
               onPressed: () {
                 Navigator.pushNamed(context, "a_router_widget").then((value) {
@@ -129,7 +132,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 });
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("SwipeListItemDemoPage"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -137,7 +141,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("手势竞技场"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -145,7 +150,8 @@ class MyPageHomeState extends State<MyPageHome> {
                 }));
               },
             ),
-            RaisedButton(
+            Divider(height: 10,),
+            ElevatedButton(
               child: Text("自定义错误页面"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {

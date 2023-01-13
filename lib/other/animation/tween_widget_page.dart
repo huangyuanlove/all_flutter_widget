@@ -9,13 +9,13 @@ class _TweenWidgetPageState extends State<TweenWidgetPage>
     with TickerProviderStateMixin {
  late Animation<double> scaleAnimation;
  late AnimationController scaleAnimationController;
- late AnimationStatus scaleAnimationStatus;
- late double scaleAnimationValue;
+ late AnimationStatus scaleAnimationStatus= AnimationStatus.completed;
+ late double scaleAnimationValue = 0;
 
 
  late Animation<Color?> colorAnimation;
  late AnimationController colorAnimationController;
- late AnimationStatus colorAnimationStatus;
+ late AnimationStatus colorAnimationStatus = AnimationStatus.completed;
   Color colorAnimationValue = Colors.red;
 
 
@@ -75,7 +75,7 @@ class _TweenWidgetPageState extends State<TweenWidgetPage>
       ),
       body: ListView(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               scaleAnimationController.reset();
               scaleAnimationController.forward();

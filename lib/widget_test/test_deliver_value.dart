@@ -8,18 +8,22 @@ class TestDeliverValueWidget extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Text(value),
-        FlatButton(
-          child: Text("返回"),
-          onPressed: (){
+    return
+      Scaffold(
+        appBar: AppBar(title: Text("TestDeliverValueWidget"),),
+        body: Stack(
+        children: <Widget>[
+          Text(value),
+          FlatButton(
+            child: Text("返回"),
+            onPressed: (){
 
-            Navigator.of(context).pop(value + value);
-          },
-        ),
-      ],
-    );
+              Navigator.of(context).pop(value + value);
+            },
+          ),
+        ],
+    ),
+      );
   }
 
 

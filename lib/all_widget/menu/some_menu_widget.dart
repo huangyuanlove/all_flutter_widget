@@ -15,7 +15,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
   final String _checkedValue4 = 'Four';
 
   String dropDown1Value = "Free";
-  String dropdown2Value ="";
+  String dropdown2Value ="Default";
   String dropdown3Value = 'Four';
 
   final String _simpleValue1 = 'Menu item value one';
@@ -124,7 +124,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
                   dropdown2Value = newValue??"";
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four']
+              items: <String>['One', 'Two', 'Free', 'Four',"Default"]
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,

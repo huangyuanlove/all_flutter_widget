@@ -12,14 +12,10 @@ class ThirdPart extends StatelessWidget {
       body: Center(
         child: ListView(
           children: <Widget>[
-            RaisedButton(
-              color: Colors.blue,
-              highlightColor: Colors.blue[700],
-              colorBrightness: Brightness.dark,
-              splashColor: Colors.grey,
+            ElevatedButton(
+
               child: Text("fl_chart"),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0)),
+
               onPressed: () {},
             ),
             ElevatedButton(

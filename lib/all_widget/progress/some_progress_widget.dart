@@ -12,6 +12,7 @@ class _SomeProgressWidgetState extends State<SomeProgressWidget> {
       appBar: AppBar(title: Text("SomeProgressWidget"),),
       body: Column(
         children: <Widget>[
+          Container(height: 20,),
           LinearProgressIndicator(),
           Divider(height: 24,),
           SizedBox(

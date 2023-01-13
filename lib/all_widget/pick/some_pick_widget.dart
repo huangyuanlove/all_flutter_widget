@@ -20,7 +20,7 @@ class _SomePickWidgetState extends State<SomePickWidget> {
       ),
       body: ListView(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () async {
               final DateTime picked = await showDatePicker(
                   context: context,
@@ -36,7 +36,9 @@ class _SomePickWidgetState extends State<SomePickWidget> {
             },
             child: Text(dayPickerValue),
           ),
-          RaisedButton(
+          Container(height: 10,),
+          ElevatedButton(
+
             onPressed: () async {
               final TimeOfDay picked =
                   await showTimePicker(context: context, initialTime: _time)??TimeOfDay.fromDateTime(DateTime.now());

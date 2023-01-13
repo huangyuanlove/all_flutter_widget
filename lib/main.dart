@@ -226,7 +226,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     _myTabs.add(
         BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "控件"));
     _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.build), label: "Test"));
+        BottomNavigationBarItem(icon: Icon(Icons.build), label: "自定义"));
     _myTabs.add(
         BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
 

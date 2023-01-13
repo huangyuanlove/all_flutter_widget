@@ -19,7 +19,7 @@ class TestSmallWidgetState extends State<TestSmallWidget> {
             flexibleSpace: FlexibleSpaceBar(
               title: const Text("CustomScrollView"),
               background: Image.asset(
-                "image/pic.png",
+                "assets/image/pic.png",
                 fit: BoxFit.cover,
               ),
             ),

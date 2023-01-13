@@ -17,29 +17,33 @@ class NotificationWidgetRouteState extends State<NotificationWidgetRoute>{
 
 
 
-    return NotificationListener<MyNotification>(
-      onNotification: (notification)  {
-        setState(() {
-          _msg += notification.msg;
-        });
-        return true;
-      },
-      child:Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Builder(
-            builder: (context) {
-              return RaisedButton(
-                //按钮点击时分发通知
-                onPressed: () => MyNotification(msg: "hi ").dispatch(context),
-                child: Text("Send Notification"),
-              );
-            },
-          ),
-          Text(_msg),
-          SmallNotificationWidget()
-        ],
-      ));
+    return
+      Scaffold(
+        appBar: AppBar(title: Text("NotificationWidgetRoute"),),
+        body: NotificationListener<MyNotification>(
+        onNotification: (notification)  {
+          setState(() {
+            _msg += notification.msg;
+          });
+          return true;
+        },
+        child:Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Builder(
+              builder: (context) {
+                return RaisedButton(
+                  //按钮点击时分发通知
+                  onPressed: () => MyNotification(msg: "hi ").dispatch(context),
+                  child: Text("Send Notification"),
+                );
+              },
+            ),
+            Text(_msg),
+            SmallNotificationWidget()
+          ],
+        )),
+      );
   }
 
 }
