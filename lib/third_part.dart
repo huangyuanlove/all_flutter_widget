@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/third_part/riverpod/riverpod_widget.dart';
+import 'package:flutter_widget/third_part/show_rich_text_html.dart';
 
 class ThirdPart extends StatelessWidget {
   @override
@@ -33,6 +34,19 @@ class ThirdPart extends StatelessWidget {
               style: ButtonStyle(),
 
             ),
+            ElevatedButton(
+              onPressed: () =>
+              {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return ShowHtmlTextWidget();
+                    }))
+              },
+              child: Text("HtmlWidget"),
+
+
+            ),
+
 
           ],
         ),

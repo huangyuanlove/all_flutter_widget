@@ -10,3 +10,5 @@ pubspec.lock
 .dart_tool
 .flutter-plugins-dependencies
 .flutter-plugins
+.DS_Store
+macos/Podfile.lock
