@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'UseKeyWidget.dart';
 import 'test_small_widget.dart';
 import 'will_pop_scope.dart';
 import 'package:flutter_widget/widget_test/notification_test/notification_test_widget_route.dart';
@@ -156,6 +157,15 @@ class MyPageHomeState extends State<MyPageHome> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return TestCustomErrorWidget();
+                }));
+              },
+            ),
+            Divider(height: 10,),
+            ElevatedButton(
+              child: Text("Key"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SwapColorBox();
                 }));
               },
             ),

@@ -12,8 +12,7 @@ class ShowHtmlTextWidget extends StatefulWidget {
 class _ShowHtmlTextWidgetState extends State<ShowHtmlTextWidget> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text("富文本标签"),
           centerTitle: true,
@@ -44,7 +43,7 @@ class _ShowHtmlTextWidgetState extends State<ShowHtmlTextWidget> {
           ),
 
         ),
-      ),
+
     );
   }
 }
