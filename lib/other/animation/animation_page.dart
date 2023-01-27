@@ -15,7 +15,7 @@ class _AnimationPageWidgetState extends State<AnimationPageWidget> {
       ),
       body: ListView(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext context) {

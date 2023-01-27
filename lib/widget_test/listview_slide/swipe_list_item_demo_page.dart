@@ -49,7 +49,7 @@ class _SwipeListItemDemoPagePageState extends State<SwipeListItemDemoPage> {
           child: new IconButton(
             icon: new Icon(Icons.delete),
             color: Colors.white,
-            onPressed: () => Scaffold.of(context)
+            onPressed: () => ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text("$item Delete"))),
           ),
         ),
@@ -58,7 +58,7 @@ class _SwipeListItemDemoPagePageState extends State<SwipeListItemDemoPage> {
           child: new IconButton(
             icon: new Icon(Icons.info),
             color: Colors.white,
-            onPressed: () => Scaffold.of(context)
+            onPressed: () => ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text("$item Info"))),
           ),
         ),

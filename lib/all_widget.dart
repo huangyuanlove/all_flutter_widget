@@ -135,7 +135,7 @@ class EntryItem extends StatelessWidget {
   Widget _buildTiles(Entry root, BuildContext context) {
     if (root.children.isEmpty) {
       return ListTile(
-          title: FlatButton(
+          title: TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(root.title);
               },

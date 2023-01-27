@@ -26,7 +26,7 @@ class BoxWidget extends StatelessWidget {
               ),
             ),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return OverflowBoxWidget();
@@ -34,7 +34,7 @@ class BoxWidget extends StatelessWidget {
             },
             child: Text("OverflowBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return DecorateBoxWidget();
@@ -42,7 +42,7 @@ class BoxWidget extends StatelessWidget {
             },
             child: Text("DecoratedBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return FittedBoxWidget();
@@ -50,7 +50,7 @@ class BoxWidget extends StatelessWidget {
             },
             child: Text("FittedBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return LimitedBoxWidget();
@@ -58,15 +58,15 @@ class BoxWidget extends StatelessWidget {
             },
             child: Text("LimitedBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Text("RotatedBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Text("SizedOverflowBox"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Text("UnconstrainedBox"),
           ),

@@ -87,7 +87,7 @@ class _AnimatedListViewWidgetState extends State<AnimatedListViewWidget> {
               tooltip: 'remove the selected item',
             ),
           ],
-          leading: FlatButton(onPressed: (){Navigator.of(context).pop();}, child: Icon(Icons.arrow_back_ios)),
+          leading: TextButton(onPressed: (){Navigator.of(context).pop();}, child: Icon(Icons.arrow_back_ios)),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

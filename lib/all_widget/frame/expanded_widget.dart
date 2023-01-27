@@ -12,55 +12,73 @@ class ExpandedWidget extends StatelessWidget {
         children: <Widget>[
           Text('Expanded'),
           Row(children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 print('点击红色按钮事件');
               },
-              color: const Color(0xffcc0000),
+              style:ElevatedButton.styleFrom(
+                foregroundColor: const Color(0xffcc0000),
+              ),
+
               child:  Text('红色按钮',style: txtColor,),
             ),
             Expanded(
               flex: 1,//flex用来设置当前可用空间的占优比
-              child:  RaisedButton(
+              child:  ElevatedButton(
                 onPressed: () {
                   print('点击黄色按钮事件');
                 },
-                color: const Color(0xfff1c232),
+                style:ElevatedButton.styleFrom(
+                  foregroundColor: const Color(0xfff1c232),
+                ),
+
                 child:  Text('黄色按钮',style: txtColor,),
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 print('点击粉色按钮事件');
               },
-              color: const Color(0xffea9999),
+              style:ElevatedButton.styleFrom(
+                foregroundColor: const Color(0xffea9999),
+              ),
+
               child:  Text('粉色按钮',style: txtColor,),
             ),
           ]),
           Text('Flexible'),
           Row(children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 print('点击红色按钮事件');
               },
-              color: const Color(0xffcc0000),
+              style:ElevatedButton.styleFrom(
+                foregroundColor: const Color(0xffcc0000),
+              ),
+
               child:  Text('红色按钮',style: txtColor,),
             ),
             Flexible(
               flex: 1,
-              child:  RaisedButton(
+              child:  ElevatedButton(
                 onPressed: () {
                   print('点击黄色按钮事件');
                 },
-                color: const Color(0xfff1c232),
+                style:ElevatedButton.styleFrom(
+                  foregroundColor: const Color(0xfff1c232),
+                ),
+
                 child:  Text('黄色按钮',style: txtColor,),
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 print('点击粉色按钮事件');
               },
-              color: const Color(0xffea9999),
+              style:ElevatedButton.styleFrom(
+                foregroundColor: const Color(0xffea9999),
+              ),
+
               child:  Text('粉色按钮',style: txtColor,),
             ),
           ]),

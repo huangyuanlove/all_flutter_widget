@@ -6,7 +6,7 @@ class SomeMenuWidget extends StatefulWidget {
 }
 
 class _SomeMenuWidgetState extends State<SomeMenuWidget> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
   List<String> _checkedValues =[];
   final String _checkedValue1 = 'One';

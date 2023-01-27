@@ -14,7 +14,7 @@ class TestDeliverValueWidget extends StatelessWidget{
         body: Stack(
         children: <Widget>[
           Text(value),
-          FlatButton(
+          TextButton(
             child: Text("返回"),
             onPressed: (){
 

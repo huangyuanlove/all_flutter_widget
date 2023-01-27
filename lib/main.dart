@@ -53,6 +53,9 @@ class MyApp extends StatelessWidget {
           "Checkbox": (BuildContext context) {
             return CheckBoxWidget();
           },
+          "Box": (BuildContext context) {
+            return BoxWidget();
+          },
           "Button": (BuildContext context) {
             return ButtonWidget();
           },

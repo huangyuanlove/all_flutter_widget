@@ -26,10 +26,10 @@ class TestCustomErrorWidget extends StatelessWidget{
       body: Center(
         child: ListView(
           children: [
-            RaisedButton(
-
-              color: Theme.of(context).primaryColor,
-
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor:  Theme.of(context).primaryColor,
+              ),
               onPressed: () {  },
               child: Text(show_text),
 
