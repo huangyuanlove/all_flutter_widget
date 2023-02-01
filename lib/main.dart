@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_widget/widget_test/MyPageHome.dart';
 import 'all_widget.dart';
 import 'third_part.dart';
-import 'package:flutter_widget/widget_test/main.dart';
 import 'all_widget_in_project.dart';
 
 void main() {
@@ -231,7 +228,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
 
     bodyChildren.add(AllWidget());
-    bodyChildren.add(AppTestWidget());
+    bodyChildren.add(MyPageHome());
     bodyChildren.add(ThirdPart());
   }
 

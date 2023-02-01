@@ -52,8 +52,9 @@ class TestSmallWidgetState extends State<TestSmallWidget> {
               child: new Text('list item $index'),
             );
           },
-            childCount: 50
-          ), itemExtent: 50.0)
+            childCount: 10
+          ), itemExtent: 50.0),
+
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'UseKeyWidget.dart';
 import 'test_small_widget.dart';
@@ -37,6 +38,9 @@ class MyPageHomeState extends State<MyPageHome> {
 
               child: Text("CustomScrollView"),
               onPressed: () {
+                // Navigator.of(context).push(CupertinoPageRoute(builder: (context){
+                //   return TestSmallWidget();
+                // }));
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return TestSmallWidget();
                 }));
