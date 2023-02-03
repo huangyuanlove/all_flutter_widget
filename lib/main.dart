@@ -18,6 +18,7 @@ void main() {
         // Do some init before runApp
       }
   );
+  // runApp(SizedBox(width: 100,height: 200,child: ColoredBox(color: Colors.black12,),));
 
   // FlutterError.onError = (FlutterErrorDetails details) async {
   //   Zone.current.handleUncaughtError(details.exception, details.stack);
@@ -37,7 +38,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
       return Scaffold(
         body: Center(

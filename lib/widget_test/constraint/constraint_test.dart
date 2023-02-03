@@ -5,6 +5,7 @@ import 'package:flutter_widget/widget_test/constraint/constraint_interesting.dar
 class ConstraintTestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("约束"),
@@ -15,6 +16,7 @@ class ConstraintTestWidget extends StatelessWidget {
           SizedBox(
             height: 60,
             child: Row(
+
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
@@ -24,7 +26,7 @@ class ConstraintTestWidget extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                    fit: FlexFit.tight,
+                    fit: FlexFit.loose,
                     child: ColoredBox(
                         color: Colors.amber,
                         child: Text("23123123123123123123123123"))),
