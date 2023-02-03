@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'UseKeyWidget.dart';
+import 'constraint/constraint_test.dart';
 import 'test_small_widget.dart';
 import 'will_pop_scope.dart';
 import 'package:flutter_widget/widget_test/notification_test/notification_test_widget_route.dart';
@@ -14,12 +15,12 @@ import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_p
 import 'gesture/gesture_test.dart';
 import 'custom_error_widget.dart';
 
-class MyPageHome extends StatefulWidget {
+class CustomWidgetHome extends StatefulWidget {
   @override
-  MyPageHomeState createState() => new MyPageHomeState();
+  CustomWidgetHomeState createState() => new CustomWidgetHomeState();
 }
 
-class MyPageHomeState extends State<MyPageHome> {
+class CustomWidgetHomeState extends State<CustomWidgetHome> {
   int count = 0;
   GlobalKey scaffoldKey = new GlobalKey();
 
@@ -33,6 +34,17 @@ class MyPageHomeState extends State<MyPageHome> {
       body: new Center(
         child: new ListView(
           children: <Widget>[
+
+            Divider(height: 10,),
+            ElevatedButton(
+              child: Text("约束 Constraint"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ConstraintTestWidget();
+                }));
+              },
+            ),
+
 
             ElevatedButton(
 

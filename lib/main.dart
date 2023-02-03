@@ -1,6 +1,7 @@
+import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_widget/widget_test/MyPageHome.dart';
+import 'package:flutter_widget/widget_test/custom_widget_home.dart';
 import 'all_widget.dart';
 import 'third_part.dart';
 import 'all_widget_in_project.dart';
@@ -8,10 +9,14 @@ import 'all_widget_in_project.dart';
 void main() {
 //  debugPaintSizeEnabled = true;
 
-  runApp(
+  runAppWithFConsole(
     ProviderScope(
       child: MyApp(),
-    )
+    ),
+      beforeRun: () async {
+        WidgetsFlutterBinding.ensureInitialized();
+        // Do some init before runApp
+      }
   );
 
   // FlutterError.onError = (FlutterErrorDetails details) async {
@@ -228,7 +233,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
 
     bodyChildren.add(AllWidget());
-    bodyChildren.add(MyPageHome());
+    bodyChildren.add(CustomWidgetHome());
     bodyChildren.add(ThirdPart());
   }
 

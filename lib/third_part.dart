@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/third_part/image_test.dart';
 import 'package:flutter_widget/third_part/riverpod/riverpod_widget.dart';
 import 'package:flutter_widget/third_part/show_rich_text_html.dart';
 
@@ -18,6 +20,7 @@ class ThirdPart extends StatelessWidget {
 
               onPressed: () {},
             ),
+            Divider(height: 10,),
             ElevatedButton(
                 onPressed: () =>
                 {
@@ -30,18 +33,30 @@ class ThirdPart extends StatelessWidget {
               style: ButtonStyle(),
 
             ),
+            Divider(height: 10,),
+            ElevatedButton(
+              onPressed: () =>
+              {
+                Navigator.of(context).push(
+                    CupertinoPageRoute(builder: (BuildContext context) {
+                      return ShowHtmlTextWidget();
+                    }))
+              },
+              child: Text("HtmlWidget"),
+            ),
+            Divider(height: 10,),
+
             ElevatedButton(
               onPressed: () =>
               {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (BuildContext context) {
-                      return ShowHtmlTextWidget();
+                      return ImageTest();
                     }))
               },
-              child: Text("HtmlWidget"),
-
-
+              child: Text("TestImage"),
             ),
+            Divider(height: 10,),
 
 
           ],
