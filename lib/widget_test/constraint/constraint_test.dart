@@ -10,6 +10,8 @@ class ConstraintTestWidget extends StatelessWidget {
       appBar: AppBar(
         title: Text("约束"),
       ),
+
+      // body: _buildTest(),
       body: Column(
         children: [
           LoopWidgetWithStretch(),
@@ -26,10 +28,9 @@ class ConstraintTestWidget extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                    fit: FlexFit.loose,
                     child: ColoredBox(
                         color: Colors.amber,
-                        child: Text("23123123123123123123123123"))),
+                        child: Text("23123123123123122312312312231231231223123123123123123123"))),
                 SizedBox(
                   width: 100,
                   child: ColoredBox(
@@ -49,6 +50,28 @@ class ConstraintTestWidget extends StatelessWidget {
         },
         child: Icon(Icons.ac_unit),
       ),
+    );
+  }
+
+  Widget _buildTest(){
+    return
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(width: 100, child: ColoredBox(color: Colors.redAccent,)),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              
+              Expanded(child: ColoredBox(color: Colors.blueAccent)),
+              Expanded(child: ColoredBox(color: Colors.greenAccent)),
+              Expanded(child: ColoredBox(color: Colors.yellowAccent)),
+            ],
+          ),
+        ),
+        SizedBox(width: 100, child: ColoredBox(color: Colors.black12)),
+      ],
     );
   }
 

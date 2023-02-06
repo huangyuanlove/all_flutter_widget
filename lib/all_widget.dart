@@ -108,6 +108,7 @@ final List<Entry> data = <Entry>[
       ]),
       Entry(title:'Chip',textStyle: secondStyle,children: <Entry>[
         Entry(title:'Chip', textStyle:thirdStyle),
+        Entry(title:'SomeToolTip', textStyle:thirdStyle),
         Entry(title:'ChipTheme',textStyle: thirdStyle),
         Entry(title:'ChipThemeData',textStyle: thirdStyle),
         Entry(title:'ChoiceChip',textStyle: thirdStyle),

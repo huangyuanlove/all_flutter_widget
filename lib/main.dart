@@ -1,6 +1,7 @@
 import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_widget/all_widget/chip/some_tool_tip_widget.dart';
 import 'package:flutter_widget/widget_test/custom_widget_home.dart';
 import 'all_widget.dart';
 import 'third_part.dart';
@@ -177,6 +178,9 @@ class MyApp extends StatelessWidget {
           },
           "Chip": (BuildContext context) {
             return SomeChipWidget();
+          },
+          "SomeToolTip": (BuildContext context) {
+            return SomeToolTipWidget();
           },
           "ChipTheme": (BuildContext context) {
             return SomeChipWidget();
