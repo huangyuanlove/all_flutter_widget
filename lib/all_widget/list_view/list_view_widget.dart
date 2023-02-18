@@ -23,6 +23,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
         title: Text("ListViewWidget"),
       ),
       body: ListView.builder(
+          itemExtent: 80,
           itemCount:_list.length,
           itemBuilder: (BuildContext context, int index) {
         return Card(
