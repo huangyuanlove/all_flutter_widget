@@ -67,6 +67,7 @@ final List<Entry> data = <Entry>[
    textStyle: firstStyle,
   children:  <Entry>[
       Entry(title:'List', textStyle:secondStyle,children: <Entry>[
+        Entry(title:'UseCustomScrollView', textStyle:thirdStyle),
         Entry(title:'ListView', textStyle:thirdStyle),
         Entry(title:'ListBody', textStyle:thirdStyle),
         Entry(title:'AnimatedList', textStyle:thirdStyle),
