@@ -67,6 +67,7 @@ final List<Entry> data = <Entry>[
    textStyle: firstStyle,
   children:  <Entry>[
       Entry(title:'List', textStyle:secondStyle,children: <Entry>[
+        Entry(title:'UseCustomScrollView', textStyle:thirdStyle),
         Entry(title:'ListView', textStyle:thirdStyle),
         Entry(title:'ListBody', textStyle:thirdStyle),
         Entry(title:'AnimatedList', textStyle:thirdStyle),
@@ -108,6 +109,7 @@ final List<Entry> data = <Entry>[
       ]),
       Entry(title:'Chip',textStyle: secondStyle,children: <Entry>[
         Entry(title:'Chip', textStyle:thirdStyle),
+        Entry(title:'SomeToolTip', textStyle:thirdStyle),
         Entry(title:'ChipTheme',textStyle: thirdStyle),
         Entry(title:'ChipThemeData',textStyle: thirdStyle),
         Entry(title:'ChoiceChip',textStyle: thirdStyle),

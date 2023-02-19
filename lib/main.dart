@@ -1,21 +1,26 @@
-import 'dart:async';
-
+import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_widget/all_widget/chip/some_tool_tip_widget.dart';
+import 'package:flutter_widget/widget_test/custom_widget_home.dart';
 import 'all_widget.dart';
+import 'all_widget/list_view/use_custom_scroll_view.dart';
 import 'third_part.dart';
-import 'package:flutter_widget/widget_test/main.dart';
 import 'all_widget_in_project.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
 
-  runApp(
+  runAppWithFConsole(
     ProviderScope(
       child: MyApp(),
-    )
+    ),
+      beforeRun: () async {
+        WidgetsFlutterBinding.ensureInitialized();
+        // Do some init before runApp
+      }
   );
+  // runApp(SizedBox(width: 100,height: 200,child: ColoredBox(color: Colors.black12,),));
 
   // FlutterError.onError = (FlutterErrorDetails details) async {
   //   Zone.current.handleUncaughtError(details.exception, details.stack);
@@ -35,7 +40,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) {
       return Scaffold(
         body: Center(
@@ -91,6 +95,9 @@ class MyApp extends StatelessWidget {
           },
           "ListView": (BuildContext context) {
             return ListViewWidget();
+          },
+          "UseCustomScrollView": (BuildContext context) {
+            return UseCustomScrollView();
           },
           "ListBody": (BuildContext context) {
             return ListBodyWidget();
@@ -179,6 +186,9 @@ class MyApp extends StatelessWidget {
           "Chip": (BuildContext context) {
             return SomeChipWidget();
           },
+          "SomeToolTip": (BuildContext context) {
+            return SomeToolTipWidget();
+          },
           "ChipTheme": (BuildContext context) {
             return SomeChipWidget();
           },
@@ -234,7 +244,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
 
     bodyChildren.add(AllWidget());
-    bodyChildren.add(AppTestWidget());
+    bodyChildren.add(CustomWidgetHome());
     bodyChildren.add(ThirdPart());
   }
 

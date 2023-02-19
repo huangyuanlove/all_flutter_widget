@@ -54,19 +54,32 @@ class _AnimatedListViewWidgetState extends State<AnimatedListViewWidget> {
 
   // Insert the "next item" into the list model.
   void _insert() {
-    final int index =
-    _selectedItem == null ? _list.length : _list.indexOf(_selectedItem);
-    _list.insert(index, _nextItem++);
+    int insertIndex = 0;
+    if(_selectedItem != -1){
+      _selectedItem = 0;
+    }else{
+      insertIndex = _list.indexOf(_selectedItem);
+    }
+    if(insertIndex == -1){
+      insertIndex = 0;
+    }
+    _list.insert(insertIndex, _nextItem++);
   }
 
   // Remove the selected item from the list model.
   void _remove() {
-    if (_selectedItem != null) {
-      _list.removeAt(_list.indexOf(_selectedItem));
-      setState(() {
-        _selectedItem = -1;
-      });
+    int removeIndex = 0;
+    if(_selectedItem != -1){
+      removeIndex = _list.indexOf(_selectedItem);
     }
+    if(removeIndex == -1){
+      removeIndex = 0;
+    }
+    _list.removeAt(removeIndex);
+
+    setState(() {
+      _selectedItem = -1;
+    });
   }
 
   @override
@@ -106,9 +119,8 @@ class ListModel<E> {
     required this.listKey,
     required this.removedItemBuilder,
     required Iterable<E> initialItems,
-  })  : assert(listKey != null),
-        assert(removedItemBuilder != null),
-        _items = List<E>.from(initialItems ?? <E>[]);
+  })  : assert(removedItemBuilder != null),
+        _items = List<E>.from(initialItems);
 
   final GlobalKey<AnimatedListState> listKey;
   final dynamic removedItemBuilder;
@@ -148,9 +160,7 @@ class CardItem extends StatelessWidget {
         required this.onTap,
         required this.item,
         this.selected: false})
-      : assert(animation != null),
-        assert(item != null && item >= 0),
-        assert(selected != null),
+      : assert(item >= 0),
         super(key: key);
 
   final Animation<double> animation;

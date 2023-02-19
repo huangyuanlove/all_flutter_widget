@@ -28,7 +28,7 @@ class TestCustomErrorWidget extends StatelessWidget{
           children: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor:  Theme.of(context).primaryColor,
+                primary:  Theme.of(context).primaryColor,
               ),
               onPressed: () {  },
               child: Text(show_text),

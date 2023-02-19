@@ -6,7 +6,7 @@ class SomeMenuWidget extends StatefulWidget {
 }
 
 class _SomeMenuWidgetState extends State<SomeMenuWidget> {
-  GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<String> _checkedValues =[];
   final String _checkedValue1 = 'One';
@@ -15,7 +15,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
   final String _checkedValue4 = 'Four';
 
   String dropDown1Value = "Free";
-  String dropdown2Value ="Default";
+  String dropdown2Value ="";
   String dropdown3Value = 'Four';
 
   final String _simpleValue1 = 'Menu item value one';
@@ -124,7 +124,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
                   dropdown2Value = newValue??"";
                 });
               },
-              items: <String>['One', 'Two', 'Free', 'Four',"Default"]
+              items: <String>['One', 'Two', 'Free', 'Four']
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
