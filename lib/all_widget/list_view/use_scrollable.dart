@@ -4,28 +4,25 @@ import 'package:flutter/rendering.dart';
 
 import 'item_box.dart';
 
-class UseScrollable extends StatelessWidget {
-   UseScrollable({Key? key}) : super(key: key);
+class UseScrollable extends StatefulWidget {
+  const UseScrollable({Key? key}) : super(key: key);
 
+  @override
+  State<UseScrollable> createState() => _UseScrollableState();
+}
+
+class _UseScrollableState extends State<UseScrollable> {
 
   final List<int> data = List.generate(60, (index) => index + 1);
   final List<ItemBox> itemBoxList = List.generate(60, (index) => ItemBox(index: index));
-
+  final ScrollController _scrollController = ScrollController();
+  
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text("use scrollable"),),
-        body: Scrollable(
-
-            viewportBuilder: (BuildContext context, ViewportOffset position) {
-              return Viewport(
-                offset: position,
-                slivers: [
-                  _buildSliverList()
-                ],
-              );
-            }),
-    );
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      print("offset-> ${_scrollController.offset} position->  ${_scrollController.position}");
+    });
   }
 
   Widget _buildSliverList() {
@@ -41,5 +38,28 @@ class UseScrollable extends StatelessWidget {
       index: data[index],
     );
   }
-
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("use scrollable"),),
+      body: Scrollable(
+          controller: _scrollController,
+          viewportBuilder: (BuildContext context, ViewportOffset position) {
+            return Viewport(
+              offset: position,
+              slivers: [
+                _buildSliverList()
+              ],
+            );
+          }),
+    );
+  }
+  @override
+  void dispose() {
+   _scrollController.dispose();
+    super.dispose();
+  }
 }
+
+
