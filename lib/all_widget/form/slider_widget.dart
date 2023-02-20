@@ -37,7 +37,7 @@ class _DefaultSliderState extends State<DefaultSlider> {
       onChanged: (value) {
         setState(() {
           this.value = value;
-          Scaffold.of(context)
+          ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text("value $value")));
           print("DefaultSlider value $value");
         });

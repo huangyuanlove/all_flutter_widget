@@ -43,7 +43,7 @@ class _SpacingWidgetState extends State<SpacingWidget> {
               color: Colors.blueAccent,
             ),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: _changePadding,
             child: Text('change padding'),
           )

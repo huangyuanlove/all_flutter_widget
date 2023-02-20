@@ -256,7 +256,7 @@ class _DefaultAnimatedSwitcherState extends State<DefaultAnimatedSwitcher> with 
               style: TextStyle(color: Colors.green,fontSize: 20)
           ),
         ),
-        RaisedButton(
+        ElevatedButton(
           child: const Text('Increment'),
           onPressed: () {
             slideAnimationController.reset();

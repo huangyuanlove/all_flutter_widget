@@ -16,7 +16,7 @@ class _DialogWidgetState extends State<DialogWidget> {
       appBar: AppBar(title: Text("some dialog")),
       body: Column(
         children: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text("AlertDialog"),
             onPressed: () {
               showDialog(
@@ -31,11 +31,11 @@ class _DialogWidgetState extends State<DialogWidget> {
                         ),
                       ),
                       actions: <Widget>[
-                        FlatButton(
+                        TextButton(
                           child: Text("关闭"),
                           onPressed: () => Navigator.of(context).pop(),
                         ),
-                        FlatButton(
+                        TextButton(
                           child: Text("确认"),
                           onPressed: () => Navigator.of(context).pop(),
                         )
@@ -44,7 +44,7 @@ class _DialogWidgetState extends State<DialogWidget> {
                   });
             },
           ),
-          FlatButton(
+          TextButton(
             child: Text("AboutDialog"),
             onPressed: () {
               showAboutDialog(
@@ -57,7 +57,7 @@ class _DialogWidgetState extends State<DialogWidget> {
               );
             },
           ),
-          FlatButton(
+          TextButton(
             child: Text("SimpleDialog"),
             onPressed: (){
               showDialog(context: context,builder: (BuildContext context){

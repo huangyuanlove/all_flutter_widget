@@ -13,7 +13,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        leading: FlatButton(
+        leading: TextButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -46,7 +46,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
         ),
         onTap: () {
           print("delete");
-          Scaffold.of(this.context)
+          ScaffoldMessenger.of(this.context)
               .showSnackBar(SnackBar(content: Text("delete")));
         },
       ),
@@ -59,7 +59,7 @@ class SnackBarWithoutAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Scaffold.of(context)
+        ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("没有Action的SnakeBar")));
       },
       icon: Icon(Icons.done),
@@ -72,7 +72,7 @@ class SnackBarWithAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Scaffold.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text("右侧是一个ActionBar"),
             action: SnackBarAction(
                 label: "确认撤销?",

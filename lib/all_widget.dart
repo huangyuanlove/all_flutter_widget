@@ -67,10 +67,11 @@ final List<Entry> data = <Entry>[
    textStyle: firstStyle,
   children:  <Entry>[
       Entry(title:'List', textStyle:secondStyle,children: <Entry>[
-        Entry(title:'UseCustomScrollView', textStyle:thirdStyle),
         Entry(title:'ListView', textStyle:thirdStyle),
         Entry(title:'ListBody', textStyle:thirdStyle),
         Entry(title:'AnimatedList', textStyle:thirdStyle),
+        Entry(title:'UseCustomScrollView', textStyle:thirdStyle),
+        Entry(title:'UseScrollable', textStyle:thirdStyle),
       ]),
       Entry(title:'Bar',textStyle: secondStyle,children :<Entry>[
         Entry(title:'AppBar', textStyle:thirdStyle),
@@ -137,7 +138,7 @@ class EntryItem extends StatelessWidget {
   Widget _buildTiles(Entry root, BuildContext context) {
     if (root.children.isEmpty) {
       return ListTile(
-          title: FlatButton(
+          title: TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(root.title);
               },

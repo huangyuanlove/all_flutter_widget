@@ -2,6 +2,7 @@ import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget/all_widget/chip/some_tool_tip_widget.dart';
+import 'package:flutter_widget/all_widget/list_view/use_scrollable.dart';
 import 'package:flutter_widget/widget_test/custom_widget_home.dart';
 import 'all_widget.dart';
 import 'all_widget/list_view/use_custom_scroll_view.dart';
@@ -57,6 +58,9 @@ class MyApp extends StatelessWidget {
           "Checkbox": (BuildContext context) {
             return CheckBoxWidget();
           },
+          "Box": (BuildContext context) {
+            return BoxWidget();
+          },
           "Button": (BuildContext context) {
             return ButtonWidget();
           },
@@ -95,6 +99,9 @@ class MyApp extends StatelessWidget {
           },
           "UseCustomScrollView": (BuildContext context) {
             return UseCustomScrollView();
+          },
+          "UseScrollable": (BuildContext context) {
+            return UseScrollable();
           },
           "ListBody": (BuildContext context) {
             return ListBodyWidget();
