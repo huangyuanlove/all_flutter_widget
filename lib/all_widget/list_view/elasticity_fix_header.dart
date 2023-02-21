@@ -85,8 +85,10 @@ class FlexibleSPHD extends SliverPersistentHeaderDelegate{
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    double progress = shrinkOffset / (maxHeight - minHeight);
+    progress = progress > 1 ? 1 : progress;
     return Container(
-      color: Colors.red,
+      color:Color.lerp(Colors.blue, Colors.red, progress),
       alignment: Alignment.center,
       child: Text(
         'FixedPersistentHeader',
