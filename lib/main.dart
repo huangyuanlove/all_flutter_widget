@@ -5,6 +5,7 @@ import 'package:flutter_widget/all_widget/chip/some_tool_tip_widget.dart';
 import 'package:flutter_widget/all_widget/list_view/use_scrollable.dart';
 import 'package:flutter_widget/widget_test/custom_widget_home.dart';
 import 'all_widget.dart';
+import 'all_widget/list_view/fix_header_listview.dart';
 import 'all_widget/list_view/use_custom_scroll_view.dart';
 import 'third_part.dart';
 import 'all_widget_in_project.dart';
@@ -102,6 +103,9 @@ class MyApp extends StatelessWidget {
           },
           "UseScrollable": (BuildContext context) {
             return UseScrollable();
+          },
+          "FixHeaderListView": (BuildContext context) {
+            return FixHeaderListView();
           },
           "ListBody": (BuildContext context) {
             return ListBodyWidget();

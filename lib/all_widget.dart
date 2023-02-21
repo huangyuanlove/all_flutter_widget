@@ -72,6 +72,7 @@ final List<Entry> data = <Entry>[
         Entry(title:'AnimatedList', textStyle:thirdStyle),
         Entry(title:'UseCustomScrollView', textStyle:thirdStyle),
         Entry(title:'UseScrollable', textStyle:thirdStyle),
+        Entry(title:'FixHeaderListView', textStyle:thirdStyle),
       ]),
       Entry(title:'Bar',textStyle: secondStyle,children :<Entry>[
         Entry(title:'AppBar', textStyle:thirdStyle),
