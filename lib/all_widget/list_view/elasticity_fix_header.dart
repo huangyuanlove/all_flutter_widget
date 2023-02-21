@@ -1,28 +1,28 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'item_box.dart';
 
-class FixHeaderWithSliverPersistentHeader extends StatefulWidget {
-  const FixHeaderWithSliverPersistentHeader({Key? key}) : super(key: key);
+class ElasticityFixHeader extends StatefulWidget {
+  const ElasticityFixHeader({Key? key}) : super(key: key);
 
   @override
-  State<FixHeaderWithSliverPersistentHeader> createState() =>
-      _FixHeaderWithSliverPersistentHeaderState();
+  State<ElasticityFixHeader> createState() => _ElasticityFixHeaderState();
 }
 
-class _FixHeaderWithSliverPersistentHeaderState
-    extends State<FixHeaderWithSliverPersistentHeader> {
+class _ElasticityFixHeaderState extends State<ElasticityFixHeader> {
+
+
   final List<int> data = List.generate(60, (index) => index + 1);
   final List<ItemBox> itemBoxList =
-      List.generate(60, (index) => ItemBox(index: index));
+  List.generate(60, (index) => ItemBox(index: index));
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("FixHeaderWithSliverPersistentHeader"),
-      ),
+      appBar: AppBar(title: Text("ElasticityFixHeader"),),
       body: CustomScrollView(
         slivers: [
           _buildBox(),
@@ -42,7 +42,7 @@ class _FixHeaderWithSliverPersistentHeaderState
 
   Widget _buildStickBox() {
     return SliverPersistentHeader(
-      delegate: FixedPersistentHeaderDelegate(),
+      delegate: FlexibleSPHD(maxHeight: 100,minHeight: 61.8),
       pinned: true,
     );
   }
@@ -65,9 +65,9 @@ class _FixHeaderWithSliverPersistentHeaderState
   Widget _buildSliverList() {
     return SliverList(
         delegate: SliverChildBuilderDelegate(
-      _buildItemByIndex,
-      childCount: data.length,
-    ));
+          _buildItemByIndex,
+          childCount: data.length,
+        ));
   }
 
   Widget _buildItemByIndex(BuildContext context, int index) {
@@ -77,33 +77,40 @@ class _FixHeaderWithSliverPersistentHeaderState
   }
 }
 
-class FixedPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+class FlexibleSPHD extends SliverPersistentHeaderDelegate{
+
+  final double maxHeight;
+  final double minHeight;
+  FlexibleSPHD({required this.maxHeight, required this.minHeight});
+
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      height: 30,
-      color: Colors.redAccent,
-      child: Text("吸顶的文字信息"),
+      color: Colors.red,
+      alignment: Alignment.center,
+      child: Text(
+        'FixedPersistentHeader',
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold),
+      ),
     );
   }
 
   @override
-  FloatingHeaderSnapConfiguration? get snapConfiguration {
-    return FloatingHeaderSnapConfiguration();
+  double get maxExtent => maxHeight;
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  bool shouldRebuild(covariant FlexibleSPHD oldDelegate) {
+    return oldDelegate.maxHeight != this.maxHeight || oldDelegate.minHeight != this.minHeight;
   }
 
-  @override
-  double get maxExtent => 30;
-
-  @override
-  double get minExtent => 30;
-
-  @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    throw oldDelegate == this;
-  }
 }
+
 
 class ShowOnScreenSPHD extends SliverPersistentHeaderDelegate {
   @override
