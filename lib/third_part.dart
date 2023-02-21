@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/third_part/image_test.dart';
 import 'package:flutter_widget/third_part/riverpod/riverpod_widget.dart';
 import 'package:flutter_widget/third_part/show_rich_text_html.dart';
+import 'package:flutter_widget/third_part/sticky_header/sticky_header_like_qq_list.dart';
 
 class ThirdPart extends StatelessWidget {
   @override
@@ -57,7 +58,17 @@ class ThirdPart extends StatelessWidget {
               child: Text("TestImage"),
             ),
             Divider(height: 10,),
-
+            ElevatedButton(
+              onPressed: () =>
+              {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return StickyHeaderLikeQQList();
+                    }))
+              },
+              child: Text("StickyHeaderLikeQQList"),
+            ),
+            Divider(height: 10,),
 
           ],
         ),
