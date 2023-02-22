@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class TestNestedScrollView extends StatefulWidget {
   const TestNestedScrollView({Key? key}) : super(key: key);
 
@@ -20,13 +21,26 @@ class _TestNestedScrollViewState extends State<TestNestedScrollView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          _buildAppbar(),
-          _buildTabView(),
-        ],
+      body: NestedScrollView(
+        headerSliverBuilder: _buildHeader,
+        body: TabBarView(
+          controller: tabController,
+          children: [
+            buildScrollPage(Colors.redAccent),
+            buildScrollPage(Colors.amberAccent)
+          ],
+        ),
       ),
     );
+  }
+
+  List<Widget> _buildHeader(BuildContext context, bool innerBoxIsScrolled) {
+    return [
+      SliverOverlapAbsorber(
+        sliver: _buildAppbar(),
+        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+      ),
+    ];
   }
 
   Widget _buildAppbar() {
@@ -36,7 +50,7 @@ class _TestNestedScrollViewState extends State<TestNestedScrollView>
       flexibleSpace: FlexibleSpaceBar(
           collapseMode: CollapseMode.pin,
           background:
-              Image.asset('assets/image/pic.png', fit: BoxFit.cover)),
+          Image.asset('assets/image/pic.png', fit: BoxFit.cover)),
       pinned: true,
       bottom: TabBar(
         controller: tabController,
@@ -58,16 +72,21 @@ class _TestNestedScrollViewState extends State<TestNestedScrollView>
   }
 
   Widget buildScrollPage(Color color) {
-    return CustomScrollView(
-      slivers: [
-        _buildBox(color),
-        SliverPadding(
-          padding: EdgeInsets.all(8),
-          sliver: _buildSliverGrid(),
-        ),
-        // _buildSliverGrid(),
-        _buildSliverList(),
-      ],
+    return Builder(
+      builder: (ctx) => CustomScrollView(
+        key: PageStorageKey<Color>(color),
+        slivers: [
+          SliverOverlapInjector( // tag1
+            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
+          ),
+          _buildBox(color),
+          SliverPadding(
+            padding: EdgeInsets.all(8),
+            sliver: _buildSliverGrid(),
+          ),
+          _buildSliverList(),
+        ],
+      ),
     );
   }
 
@@ -85,9 +104,9 @@ class _TestNestedScrollViewState extends State<TestNestedScrollView>
   Widget _buildSliverList() {
     return SliverList(
         delegate: SliverChildBuilderDelegate(
-      _buildItemByIndex,
-      childCount: data.length,
-    ));
+          _buildItemByIndex,
+          childCount: data.length,
+        ));
   }
 
   Widget _buildSliverGrid() {
