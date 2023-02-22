@@ -4,6 +4,7 @@ import 'package:flutter_widget/widget_test/listview_slide/swipe_list_item_demo_p
 import 'package:flutter_widget/widget_test/notification_test/notification_test_widget_route.dart';
 import 'package:flutter_widget/widget_test/provider/counter_model.dart';
 import 'package:flutter_widget/widget_test/provider/counter_model_widget.dart';
+import 'package:flutter_widget/widget_test/test_nested_scroll_view.dart';
 import 'package:provider/provider.dart';
 
 import 'UseKeyWidget.dart';
@@ -39,6 +40,14 @@ class CustomWidgetHomeState extends State<CustomWidgetHome> {
         child: new ListView(
           children: <Widget>[
             Divider(height: 10,),
+            ElevatedButton(
+              child: Text("TestNestedScrollView"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return TestNestedScrollView();
+                }));
+              },
+            ),            Divider(height: 10,),
             ElevatedButton(
               child: Text("约束 Constraint"),
               onPressed: () {
