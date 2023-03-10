@@ -27,7 +27,7 @@ class _TestNestedScrollViewState extends State<TestNestedScrollView>
           controller: tabController,
           children: [
             buildScrollPage(Colors.redAccent),
-            buildScrollPage(Colors.amberAccent)
+            buildScrollPage(Colors.amberAccent),
           ],
         ),
       ),
