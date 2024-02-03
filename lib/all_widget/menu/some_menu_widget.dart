@@ -26,8 +26,9 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
   void showPopupMenuSelection(String value) {
     if (<String>[_simpleValue1, _simpleValue2, _simpleValue3].contains(value))
       _simpleValue = value;
-    _scaffoldKey.currentState
-        ?.showSnackBar(SnackBar(content: Text('You selected: $value')));
+
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You selected: $value')));
+
   }
 
   @override
