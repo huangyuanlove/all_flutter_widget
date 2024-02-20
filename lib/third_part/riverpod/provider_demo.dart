@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_widget/all_widget/form/button.dart';
 
 final textProvider = Provider((ref) => "textProvider");
 class ProviderDemoWidget extends ConsumerWidget {
@@ -10,8 +10,13 @@ class ProviderDemoWidget extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text("ProviderDemoWidget"), centerTitle: true,),
       body: Container(
-        child: Center(
-            child: Text(value)
+        child: Column(
+            children:[ 
+              Text(value),
+            ElevatedButton(onPressed: ()=>{
+              textProvider.overrideWithValue("123")
+            }, child: Text("点击此处改变文本值"))
+            ]
         ),
       ),
     );

@@ -15,7 +15,8 @@ class FixHeaderListView extends StatelessWidget {
         children: [
           TextButton(
               style: TextButton.styleFrom(
-                  primary: Colors.white, backgroundColor: Colors.blueAccent),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blueAccent),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (BuildContext context) {
@@ -25,7 +26,8 @@ class FixHeaderListView extends StatelessWidget {
               child: Text("SliverPersistentHeader")),
           TextButton(
               style: TextButton.styleFrom(
-                  primary: Colors.white, backgroundColor: Colors.blueAccent),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blueAccent),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (BuildContext context) {
