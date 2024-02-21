@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_demo.dart';
 import 'package:flutter_widget/third_part/riverpod/state_notifier_provider_widget.dart';
