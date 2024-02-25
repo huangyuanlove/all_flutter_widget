@@ -14,14 +14,17 @@ void main() {
 //  debugPaintSizeEnabled = true;
 
   runAppWithFConsole(
-    ProviderScope(
-      child: MyApp(),
-    ),
-      beforeRun: () async {
-        WidgetsFlutterBinding.ensureInitialized();
-        // Do some init before runApp
-      }
-  );
+      ProviderScope(
+        child: MyApp(),
+      ), beforeRun: () async {
+    WidgetsFlutterBinding.ensureInitialized();
+    // Do some init before runApp
+  });
+
+  // runAppWithFConsole(MyApp(), beforeRun: () async {
+  //   WidgetsFlutterBinding.ensureInitialized();
+  // });
+
   // runApp(SizedBox(width: 100,height: 200,child: ColoredBox(color: Colors.black12,),));
 
   // FlutterError.onError = (FlutterErrorDetails details) async {
@@ -244,12 +247,11 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
     super.initState();
-    _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "控件"));
-    _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.build), label: "自定义"));
-    _myTabs.add(
-        BottomNavigationBarItem(icon: Icon(Icons.all_out), label:"三方库"));
+    _myTabs
+        .add(BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "控件"));
+    _myTabs.add(BottomNavigationBarItem(icon: Icon(Icons.build), label: "自定义"));
+    _myTabs
+        .add(BottomNavigationBarItem(icon: Icon(Icons.all_out), label: "三方库"));
 
     bodyChildren.add(AllWidget());
     bodyChildren.add(CustomWidgetHome());
