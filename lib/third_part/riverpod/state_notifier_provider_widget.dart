@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final todoProvider =
+    StateNotifierProvider<TodosNotifier, List<Todo>>((ref) => TodosNotifier());
+
 class StateNotifierProviderWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,6 +16,7 @@ class StateNotifierProviderWidget extends ConsumerWidget {
       body: Column(
         children: [
           Text("StateNotifierProvider和StateNotifier非常适合管理可能会因事件或用户交互而发生变化的状态。"),
+          Text("注意StateNotifier中通知更新时是比较的对象内存地址"),
           Divider(),
           Container(
             child: Text(
@@ -34,17 +38,23 @@ class StateNotifierProviderWidget extends ConsumerWidget {
             shrinkWrap: true,
             children: [
               for (final todo in todos)
-                CheckboxListTile(
-                  value: todo.completed,
-                  onChanged: (value) =>
-                      ref.read(todoProvider.notifier).toggle(todo.id),
-                  title: Text(todo.description),
+                Dismissible(
+                  key: Key(todo.id),
+                  child: CheckboxListTile(
+                    value: todo.completed,
+                    onChanged: (value) =>
+                        ref.read(todoProvider.notifier).toggle(todo.id),
+                    title: Text(todo.description),
+                  ),
+                  onDismissed: (direction) =>
+                      {ref.read(todoProvider.notifier).removeTodo(todo.id)},
                 ),
             ],
           )),
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
         onPressed: () {
           final notifier = ref.read(todoProvider.notifier);
           notifier.addTodo(Todo(
@@ -127,6 +137,3 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
     return result;
   }
 }
-
-final todoProvider =
-    StateNotifierProvider<TodosNotifier, List<Todo>>((ref) => TodosNotifier());

@@ -1,12 +1,14 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_widget/third_part/riverpod/future_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumer.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumerStatefulWidget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumer_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/state_notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/state_provider_widget.dart';
+import 'package:flutter_widget/third_part/riverpod/stream_provider_widget.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 final helloWorldProvider = Provider((ref) => "Hello World");
 
@@ -89,10 +91,27 @@ class _ReverpodState extends State<ReverpodWidget> {
                   "StateNotifier Provider",
                   style: TextStyle(decoration: TextDecoration.lineThrough),
                 )),
-            ElevatedButton(onPressed: () => {}, child: Text("FutureProvider")),
-            ElevatedButton(onPressed: () => {}, child: Text("StreamProvider")),
             ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return FutureProviderWidget();
+                      }))
+                    },
+                child: Text("FutureProvider")),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return StreamProviderWidget();
+                      }))
+                    },
+                child: Text("StreamProvider")),
+            ElevatedButton(
+                onPressed: () => {
+                      Fluttertoast.showToast(
+                          msg: "不推荐使用，可用(Async)NotifierProvider代替")
+                    },
                 child: Text(
                   "ChangeNotifierProvider",
                   style: TextStyle(decoration: TextDecoration.lineThrough),

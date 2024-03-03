@@ -2910,3 +2910,17 @@ The Dart DevTools debugger and profiler is available at: http://127.0.0.1:50806/
 [WrapWithProviderScope] 2024-02-25T22:19:53.259594 #287    ServerPlugin._onRequest (package:analyzer_plugin/plugin/plugin.dart:599:18)
 [WrapWithProviderScope] 2024-02-25T22:19:53.259594 <asynchronous suspension>
 [WrapWithProviderScope] 2024-02-25T22:19:53.259594
+The Dart VM service is listening on http://127.0.0.1:62787/nDhC3RwT5-4=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:62787/nDhC3RwT5-4=/devtools?uri=ws://127.0.0.1:62787/nDhC3RwT5-4=/ws
+The Dart VM service is listening on http://127.0.0.1:62822/xoUev1kv70E=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:62822/xoUev1kv70E=/devtools?uri=ws://127.0.0.1:62822/xoUev1kv70E=/ws
+The Dart VM service is listening on http://127.0.0.1:63063/5PlF8OABDOg=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:63063/5PlF8OABDOg=/devtools?uri=ws://127.0.0.1:63063/5PlF8OABDOg=/ws
+The Dart VM service is listening on http://127.0.0.1:52722/FQp5exqcSvo=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:52722/FQp5exqcSvo=/devtools?uri=ws://127.0.0.1:52722/FQp5exqcSvo=/ws
+The Dart VM service is listening on http://127.0.0.1:65123/irs5I0UFamY=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:65123/irs5I0UFamY=/devtools?uri=ws://127.0.0.1:65123/irs5I0UFamY=/ws
+The Dart VM service is listening on http://127.0.0.1:50908/PX0_mTMDdUg=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:50908/PX0_mTMDdUg=/devtools?uri=ws://127.0.0.1:50908/PX0_mTMDdUg=/ws
+The Dart VM service is listening on http://127.0.0.1:51016/th1khHrmEco=/
+The Dart DevTools debugger and profiler is available at: http://127.0.0.1:51016/th1khHrmEco=/devtools?uri=ws://127.0.0.1:51016/th1khHrmEco=/ws
