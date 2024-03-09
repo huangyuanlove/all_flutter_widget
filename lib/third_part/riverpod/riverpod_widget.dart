@@ -5,6 +5,7 @@ import 'package:flutter_widget/third_part/riverpod/provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumer.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumerStatefulWidget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumer_widget.dart';
+import 'package:flutter_widget/third_part/riverpod/riverpod_select_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/state_notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/state_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/stream_provider_widget.dart';
@@ -53,6 +54,14 @@ class _ReverpodState extends State<ReverpodWidget> {
                       }))
                     },
                 child: Text("Provider with ConsumerStatefulWidget")),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return RiverpodSelectWidget();
+                      }))
+                    },
+                child: Text("Provider select")),
             Divider(),
             Text(
               "下面是八中不同的Provider，中划线是已经过时即将被弃用的",
