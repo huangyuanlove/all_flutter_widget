@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/all_widget/list_view/elasticity_fix_header.dart';
-import 'package:flutter_widget/all_widget/list_view/fix_header_with_sliver_persistent_header.dart';
+import 'package:flutter_widget/simple_widget/list_view/elasticity_fix_header.dart';
+import 'package:flutter_widget/simple_widget/list_view/fix_header_with_sliver_persistent_header.dart';
 
 class FixHeaderListView extends StatelessWidget {
   const FixHeaderListView({Key? key}) : super(key: key);

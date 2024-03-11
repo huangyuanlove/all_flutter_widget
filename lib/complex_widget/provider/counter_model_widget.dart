@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_widget/widget_test/provider/counter_model.dart';
+import 'package:flutter_widget/complex_widget/provider/counter_model.dart';
 import 'counter_model_widget_second.dart';
 import 'test_text_build_widget.dart';
 
@@ -20,7 +20,6 @@ class CounterFirstScreen extends StatelessWidget {
           children: <Widget>[
             TestTextWidget(
               logTag: "tag:第一个界面中显示计数的TestTextWidget",
-
               child: Text(
                 'Value: ${_counter.value}',
                 style: TextStyle(fontSize: _textSize),
@@ -28,21 +27,14 @@ class CounterFirstScreen extends StatelessWidget {
             ),
             TestTextWidget(
               logTag: "tag:第一个界面中固定的文本",
-
-              child: Text(
-                "固定文本，不需要重绘"
-              ),
+              child: Text("固定文本，不需要重绘"),
             ),
           ],
         ),
-
-
-
-
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
 //                return Provider<int>.value(
 //                  value: _textSize.toInt(),
 //                  child: ChangeNotifierProvider.value(
@@ -53,17 +45,16 @@ class CounterFirstScreen extends StatelessWidget {
 //                    ),
 //                  ),
 //                );
-              return MultiProvider(
-                providers: [
-                  Provider<int>.value(value: _textSize.toInt()),
-                  ChangeNotifierProvider.value(value: _counter),
-                  Provider.value(value: Colors.red.shade50),
-                ],
-                child: SecondPage(),
-              );
-              }))
-            },
-
+            return MultiProvider(
+              providers: [
+                Provider<int>.value(value: _textSize.toInt()),
+                ChangeNotifierProvider.value(value: _counter),
+                Provider.value(value: Colors.red.shade50),
+              ],
+              child: SecondPage(),
+            );
+          }))
+        },
         child: Icon(Icons.navigate_next),
       ),
     );
