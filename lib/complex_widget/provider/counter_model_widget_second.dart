@@ -1,6 +1,6 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/widget_test/provider/counter_model.dart';
+import 'package:flutter_widget/complex_widget/provider/counter_model.dart';
 import 'test_text_build_widget.dart';
 
 class SecondPage extends StatelessWidget {
@@ -44,15 +44,14 @@ class SecondPage extends StatelessWidget {
               child: Text("第二个界面的固定文本 TestTextWidget.child"),
             ),
             Text("SecondPage fix text"),
-
           ],
         ),
       ),
       floatingActionButton: Consumer<CounterModel>(
         builder: (context, CounterModel counter, child) => FloatingActionButton(
-              onPressed: counter.increment,
-              child: child,
-            ),
+          onPressed: counter.increment,
+          child: child,
+        ),
         child: Icon(Icons.add),
       ),
     );

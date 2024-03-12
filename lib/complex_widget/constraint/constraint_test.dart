@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/logger.dart';
-import 'package:flutter_widget/widget_test/constraint/constraint_interesting.dart';
+import 'package:flutter_widget/complex_widget/constraint/constraint_interesting.dart';
 
 class ConstraintTestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("约束"),
@@ -18,7 +17,6 @@ class ConstraintTestWidget extends StatelessWidget {
           SizedBox(
             height: 60,
             child: Row(
-
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
@@ -30,7 +28,8 @@ class ConstraintTestWidget extends StatelessWidget {
                 Flexible(
                     child: ColoredBox(
                         color: Colors.amber,
-                        child: Text("23123123123123122312312312231231231223123123123123123123"))),
+                        child: Text(
+                            "23123123123123122312312312231231231223123123123123123123"))),
                 SizedBox(
                   width: 100,
                   child: ColoredBox(
@@ -53,17 +52,19 @@ class ConstraintTestWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTest(){
-    return
-      Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+  Widget _buildTest() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SizedBox(width: 100, child: ColoredBox(color: Colors.redAccent,)),
+        SizedBox(
+            width: 100,
+            child: ColoredBox(
+              color: Colors.redAccent,
+            )),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              
               Expanded(child: ColoredBox(color: Colors.blueAccent)),
               Expanded(child: ColoredBox(color: Colors.greenAccent)),
               Expanded(child: ColoredBox(color: Colors.yellowAccent)),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/widget_test/UseKeyWidget.dart';
+import 'package:flutter_widget/complex_widget/UseKeyWidget.dart';
 
 class ConstraintInteresting extends StatelessWidget {
-   ConstraintInteresting({Key? key}) : super(key: key);
+  ConstraintInteresting({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class ConstraintInteresting extends StatelessWidget {
       appBar: AppBar(
         title: Text("some interesting"),
       ),
-      body: buildMNLayout(10,3),
+      body: buildMNLayout(10, 3),
     );
   }
 
@@ -19,7 +19,7 @@ class ConstraintInteresting extends StatelessWidget {
     for (int i = 0; i < m; i++) {
       List<Widget> v = [];
       for (int j = 0; j < n; j++) {
-        v.add(getRandomColorBox(i*j));
+        v.add(getRandomColorBox(i * j));
       }
       h.add(Expanded(
           child: Column(
@@ -33,7 +33,6 @@ class ConstraintInteresting extends StatelessWidget {
     );
   }
 
-
   List<String> imagePath = [
     "assets/image/food/food01.jpeg",
     "assets/image/food/food02.jpeg",
@@ -43,16 +42,17 @@ class ConstraintInteresting extends StatelessWidget {
     "assets/image/food/food06.jpeg",
   ];
   Widget getRandomColorBox(int index) {
-    Widget child ;
-    if(index % 2 ==0){
+    Widget child;
+    if (index % 2 == 0) {
       child = Image.asset(imagePath[index % imagePath.length]);
-    }else{
+    } else {
       child = Container();
     }
 
-
-
-    return
-      Expanded(child: ColoredBox(color: RandomColor.getColor(),child: child,));
+    return Expanded(
+        child: ColoredBox(
+      color: RandomColor.getColor(),
+      child: child,
+    ));
   }
 }

@@ -1,6 +1,6 @@
 ## flutter从挣扎到放弃
 
-1. 已经从flutter2.x 升级到flutter3.x ;部分api有修改，部分api被标记为废弃；当前使用3.0.2编译运行
+1. 已经从flutter2.x 升级到flutter3.x ;部分api有修改，部分api被标记为废弃；当前使用$$3.0.2$$ 3.16.9编译运行
 2. 可以直接运行在macOS、Android、iOS上;其他设备没有测试
 
 ### 第一部分 常用控件

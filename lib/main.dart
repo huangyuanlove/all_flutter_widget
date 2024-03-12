@@ -1,14 +1,14 @@
 import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_widget/all_widget/chip/some_tool_tip_widget.dart';
-import 'package:flutter_widget/all_widget/list_view/use_scrollable.dart';
-import 'package:flutter_widget/widget_test/custom_widget_home.dart';
-import 'all_widget.dart';
-import 'all_widget/list_view/fix_header_listview.dart';
-import 'all_widget/list_view/use_custom_scroll_view.dart';
-import 'third_part.dart';
-import 'all_widget_in_project.dart';
+import 'package:flutter_widget/simple_widget/chip/some_tool_tip_widget.dart';
+import 'package:flutter_widget/simple_widget/list_view/use_scrollable.dart';
+import 'package:flutter_widget/complex_widget/complex_widget_home.dart';
+import 'simple_widget/simple_widget_home.dart';
+import 'simple_widget/list_view/fix_header_listview.dart';
+import 'simple_widget/list_view/use_custom_scroll_view.dart';
+import 'third_part/third_part_home.dart';
+import 'simple_widget/all_widget_in_project.dart';
 
 void main() {
 //  debugPaintSizeEnabled = true;
@@ -248,14 +248,15 @@ class _HomeWidgetState extends State<HomeWidget> {
   void initState() {
     super.initState();
     _myTabs
-        .add(BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "控件"));
-    _myTabs.add(BottomNavigationBarItem(icon: Icon(Icons.build), label: "自定义"));
+        .add(BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "基础控件"));
+    _myTabs
+        .add(BottomNavigationBarItem(icon: Icon(Icons.build), label: "复杂控件"));
     _myTabs
         .add(BottomNavigationBarItem(icon: Icon(Icons.all_out), label: "三方库"));
 
-    bodyChildren.add(AllWidget());
-    bodyChildren.add(CustomWidgetHome());
-    bodyChildren.add(ThirdPart());
+    bodyChildren.add(SimpleWidgetHome());
+    bodyChildren.add(ComplexWidgetHome());
+    bodyChildren.add(ThirdPartHome());
   }
 
   @override
