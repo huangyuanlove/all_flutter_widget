@@ -14,9 +14,9 @@ class Movie {
 }
 
 final movieDetailProvider =
-    FutureProvider.autoDispose.family<Movie, int>((ref, movieId) async {
+    FutureProvider.autoDispose.family<Movie, int>((ref, movieId) {
   logger.d("开始获取id为 ${movieId} 详情");
-  await Future.delayed(Duration(seconds: 2), () {});
+  // await Future.delayed(Duration(seconds: 2), () {});
   final wordPair = generateWordPairs().first;
   return Movie(wordPair.first + "_" + wordPair.second, movieId);
 });
@@ -25,12 +25,17 @@ class RiverpodFamilyWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(movieDetailProvider(1));
+    logger.d("RiverpodFamilyWidget#build");
+        logger.d("ref runtimeType is ${ref.runtimeType} , valye runtimeType is ${value.runtimeType}");
     return Scaffold(
       appBar: AppBar(
         title: Text("RiverpodFamily"),
         centerTitle: true,
       ),
-      body: value.when(data: (movie) {
+      body: value.when(
+        skipLoadingOnRefresh: false,
+        skipLoadingOnReload: false,
+        data: (movie) {
         return Text("id; ${movie.id}  , name:${movie.name}");
       }, error: (error, stack) {
         return Text(error.toString());
@@ -39,15 +44,6 @@ class RiverpodFamilyWidget extends ConsumerWidget {
           child: CircularProgressIndicator(),
         );
       }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          int movieId = Random().nextInt(100);
-          logger.d("获取id为 ${movieId} 详情");
-
-          ref.refresh(movieDetailProvider(movieId));
-        },
-        child: Icon(Icons.refresh),
-      ),
     );
   }
 }
