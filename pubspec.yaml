@@ -39,6 +39,7 @@ dependencies:
   flutter_sticky_header: ^0.6.5
   flutter_widget_from_html_core: ^0.14.11
   widget_with_codeview: ^3.1.0
+  codeview: ^0.0.16
   fluttertoast: ^8.2.4
 dev_dependencies:
   flutter_test:
@@ -93,6 +94,8 @@ flutter:
     - lib/third_part/riverpod/state_notifier_provider_widget.dart
     - lib/third_part/riverpod/provider_widget.dart
     - lib/third_part/riverpod/state_provider_widget.dart
+
+    - lib/third_part/riverpod/ProviderObserverLogger.source
     
     
 

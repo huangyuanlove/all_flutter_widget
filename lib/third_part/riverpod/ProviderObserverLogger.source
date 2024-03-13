@@ -1,0 +1,41 @@
+//Riverpod 包括一个 ProviderObserver 类，我们可以子类化以实现一个 Logger：
+class Logger extends ProviderObserver {
+  @override
+  void didUpdateProvider(
+    ProviderBase provider,
+    Object? previousValue,
+    Object? newValue,
+    ProviderContainer container,
+  ) {
+    print('[${provider.name ?? provider.runtimeType}] value: $newValue');
+  }
+}
+//这使我们能够访问先前和新的数值。
+
+//通过将Logger添加到ProviderScope内的观察者列表，我们可以为整个应用启用日志记录：
+void main() {
+  runApp(
+    ProviderScope(observers: [Logger()], child: MyApp()),
+  );
+}
+
+//为了提升日志记录的输出，我们可以给我们的提供者（providers）添加一个名称：
+final counterStateProvider = StateProvider<int>((ref) {
+  return 0;
+}, name: 'counter');
+
+//如有需要，我们可以根据观察到的数值来调整记录器的输出：
+class Logger extends ProviderObserver {
+  @override
+  void didUpdateProvider(
+    ProviderBase provider,
+    Object? previousValue,
+    Object? newValue,
+    ProviderContainer container,
+  ) {
+    if (newValue is StateController<int>) {
+      print(
+          '[${provider.name ?? provider.runtimeType}] value: ${newValue.state}');
+    }
+  }
+}
