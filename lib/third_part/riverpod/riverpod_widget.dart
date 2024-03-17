@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget/third_part/riverpod/future_provider_widget.dart';
+import 'package:flutter_widget/third_part/riverpod/paged/riverpod_with_paged_list.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumer.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_with_consumerStatefulWidget.dart';
@@ -167,6 +168,17 @@ class _ReverpodState extends State<ReverpodWidget> {
                   onPressed: () => {}, child: Text("NotifierProvider")),
               ElevatedButton(
                   onPressed: () => {}, child: Text("AsyncNotifierProvider")),
+              Divider(),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return RiverPodWithPagedList();
+                        }))
+                      },
+                  child: Text(
+                    "分页示例",
+                  )),
             ],
           ),
         ));
