@@ -1,4 +1,6 @@
+import 'package:codeview/codeview.dart';
 import 'package:flutter/material.dart';
+import 'package:widget_with_codeview/widget_with_codeview.dart';
 
 class CheckBoxWidget extends StatefulWidget {
   @override
@@ -11,42 +13,40 @@ class _CheckBoxState extends State<CheckBoxWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("CheckBox"),
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              color: Colors.black12,
-              child: Row(
-                children: <Widget>[
-                  _CheckBoxDefault(),
-                  _CheckBoxDefault(),
-                  _CheckBoxDefault(),
-                  _CheckBoxDefault(),
-                ],
-              ),
-            ),
-
-            Container(
-              color: Colors.blueAccent,
+        appBar: AppBar(
+          title: Text("CheckBox"),
+        ),
+        body: WidgetWithCodeView(
+            filePath: "lib/simple_widget/form/check_box.dart",
+            child: Container(
               child: Column(
                 children: <Widget>[
-                  _CheckBoxListTileDefault(),
-                  _CheckBoxListTileDefault(),
-                  _CheckBoxListTileDefault(),
+                  Container(
+                    color: Colors.black12,
+                    child: Row(
+                      children: <Widget>[
+                        _CheckBoxDefault(),
+                        _CheckBoxDefault(),
+                        _CheckBoxDefault(),
+                        _CheckBoxDefault(),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Colors.blueAccent,
+                    child: Column(
+                      children: <Widget>[
+                        _CheckBoxListTileDefault(),
+                        _CheckBoxListTileDefault(),
+                        _CheckBoxListTileDefault(),
+                      ],
+                    ),
+                  ),
+                  _RadioButton(),
+                  _RadioListTile(),
                 ],
               ),
-            ),
-
-
-            _RadioButton(),
-            _RadioListTile(),
-          ],
-        ),
-      ),
-    );
+            )));
   }
 }
 
@@ -68,7 +68,7 @@ class _CheckBoxDefaultState extends State<_CheckBoxDefault> {
     return Checkbox(
       onChanged: (value) {
         setState(() {
-          isChecked = value??false;
+          isChecked = value ?? false;
         });
       },
       value: isChecked,
@@ -92,7 +92,7 @@ class __CheckBoxListTileDefaultState extends State<_CheckBoxListTileDefault> {
       activeColor: Colors.lightGreenAccent,
       onChanged: (value) {
         setState(() {
-          isChecked = value??false;
+          isChecked = value ?? false;
         });
       },
       title: Text("title"),
@@ -114,8 +114,7 @@ class __RadioButtonState extends State<_RadioButton> {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
+    return Container(
         color: Colors.tealAccent,
         child: Row(
           children: <Widget>[
@@ -125,7 +124,7 @@ class __RadioButtonState extends State<_RadioButton> {
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue =value??-1 ;
+                    groupValue = value ?? -1;
                   });
                 }),
             Radio<int>(
@@ -134,7 +133,7 @@ class __RadioButtonState extends State<_RadioButton> {
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue = value??-1;
+                    groupValue = value ?? -1;
                   });
                 }),
             Radio<int>(
@@ -143,14 +142,11 @@ class __RadioButtonState extends State<_RadioButton> {
                 onChanged: (value) {
                   setState(() {
                     print("value:$value");
-                    groupValue = value??-1;
+                    groupValue = value ?? -1;
                   });
                 }),
           ],
-        )
-      );
-
-
+        ));
   }
 }
 
@@ -171,7 +167,7 @@ class __RadioListTileState extends State<_RadioListTile> {
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value??-1;
+              groupValue = value ?? -1;
             });
           },
           activeColor: Colors.tealAccent,
@@ -183,7 +179,7 @@ class __RadioListTileState extends State<_RadioListTile> {
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value??-1;
+              groupValue = value ?? -1;
             });
           },
           activeColor: Colors.tealAccent,
@@ -195,7 +191,7 @@ class __RadioListTileState extends State<_RadioListTile> {
           groupValue: groupValue,
           onChanged: (value) {
             setState(() {
-              groupValue = value??-1;
+              groupValue = value ?? -1;
             });
           },
           activeColor: Colors.tealAccent,
