@@ -8,7 +8,7 @@ final pagingController =
     StateNotifierProvider<PagingController, PagingState>((ref) {
   logger.d("pagingController created");
   return PagingController();
-});
+},name: "paged StateNotifier");
 
 class RiverPodWithPagedList extends ConsumerStatefulWidget {
   @override
@@ -21,7 +21,7 @@ class RiverpodPagingState extends ConsumerState<ConsumerStatefulWidget> {
   @override
   void initState() {
     super.initState();
-    ref.read(pagingController.notifier).fetchMoreData();
+    ref.read(pagingController.notifier).refresh();
   }
 
   @override
@@ -45,7 +45,7 @@ class RiverpodPagingState extends ConsumerState<ConsumerStatefulWidget> {
       body: RefreshIndicator(
         onRefresh: () async {
           final controller = ref.watch(pagingController.notifier);
-          await controller.fetchMoreData();
+          await controller.refresh();
         },
         child: ListView.builder(
             physics: const AlwaysScrollableScrollPhysics(),
@@ -99,11 +99,18 @@ class PagingController extends StateNotifier<PagingState> {
   List<DataModel> data = [];
   bool hasMore = true;
 
+
+  Future<void> refresh()async{
+    pageIndex = 0;
+    hasMore = true;
+   await fetchMoreData();
+  }
+
   Future<void> fetchMoreData() async {
     if (!hasMore) {
       return;
     }
-    final nextPageData = await fetchPageData(pageIndex + 1);
+    final nextPageData = await fetchPageData(++pageIndex);
     if (nextPageData.isNotEmpty) {
       List<DataModel> tmp = [];
       if (pageIndex == 1) {
@@ -112,7 +119,7 @@ class PagingController extends StateNotifier<PagingState> {
         tmp = List.of(state.data)..addAll(nextPageData);
       }
 
-      int pageIndexCopy = pageIndex + 1;
+      int pageIndexCopy =pageIndex + 1;
       logger.d("will copy--> ${pageIndexCopy}");
 
       state = state.copyWith(
