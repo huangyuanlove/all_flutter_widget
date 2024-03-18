@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 
@@ -12,6 +14,6 @@ class RiverpodLogger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    print('[${provider.name ?? provider.runtimeType}] value: $newValue');
+    print('[${provider.name ?? provider.runtimeType}] value: ${newValue.toString()}');
   }
 }
