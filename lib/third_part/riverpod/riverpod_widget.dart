@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget/third_part/riverpod/async_notifier_provider_widget.dart';
+import 'package:flutter_widget/third_part/riverpod/change_notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/future_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/paged/riverpod_with_paged_list.dart';
@@ -158,9 +159,12 @@ class _ReverpodState extends State<ReverpodWidget> {
                       },
                   child: Text("StreamProvider")),
               ElevatedButton(
-                  onPressed: () => {
+                  onPressed: () {
                         Fluttertoast.showToast(
-                            msg: "不推荐使用，可用(Async)NotifierProvider代替")
+                            msg: "不推荐使用，可用(Async)NotifierProvider代替");
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                              return ChangeNotifierProviderWidget();
+                            }));
                       },
                   child: Text(
                     "ChangeNotifierProvider",

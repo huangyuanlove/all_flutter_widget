@@ -13,9 +13,12 @@ class Student {
   Student copyWith({String? copyID, String? copyName}) {
     return Student(name: copyName ?? this.name, id: copyID ?? this.id);
   }
+  String toString(){
+    return "$id : $name";
+  }
 }
 
-class CounterNotifier extends Notifier<Student> {
+class StudentNotifier extends Notifier<Student> {
   @override
   Student build() {
     return generateStudent();
@@ -54,22 +57,19 @@ class CounterNotifier extends Notifier<Student> {
   }
 }
 
-final counterProvider = NotifierProvider<CounterNotifier, Student>(() {
-  return CounterNotifier();
+final counterProvider = NotifierProvider<StudentNotifier, Student>(() {
+  return StudentNotifier();
 });
 final counterProviderOther =
-    NotifierProvider<CounterNotifier, Student>(CounterNotifier.new);
+    NotifierProvider<StudentNotifier, Student>(StudentNotifier.new);
 
 class CounterNotifierWidget extends ConsumerWidget {
-
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final studentID = ref.watch(counterProvider.select((value) => value.id));
-    final studentName = ref.watch(counterProvider.select((value) => value.name));
-    final student =ref.watch(counterProvider.notifier);
-    ref.listen(counterProvider,(oldValue,newValue){
-      logger.d("oldValue--> ${oldValue.toString()} \n newValue--> ${newValue.toString()}");
+    final student = ref.watch(counterProvider);
+    ref.listen(counterProvider, (oldValue, newValue) {
+      logger.d(
+          "oldValue--> ${oldValue?.id.toString()} \n newValue--> ${newValue.id}");
     });
 
     return Scaffold(
@@ -79,48 +79,38 @@ class CounterNotifierWidget extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          Text("select studentID ${studentID.toString()}"),
-          Text("select studentName ${studentName.toString()}"),
-          Text("student ${student.toString()}"),
-          Wrap(
-            spacing: 10,
-            children: [
-              
-              ElevatedButton(
-                  onPressed: () {
-                    ref
-                        .read(counterProvider.notifier)
-                        .changeIdWithCopy(Random().nextInt(100).toString());
-                  },
-                  child: Text("changeIdWithCopy")),
-              ElevatedButton(
-                  onPressed: () {
-                    final wordPair = generateWordPairs().first;
-                    ref.read(counterProvider.notifier).changeNameWithCopy(
-                        "${wordPair.first} - -${wordPair.second}");
-                  },
-                  child: Text("changeNameWithCopy"))
-            ],
-          ),
-          Wrap(
-            spacing: 10,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    ref
-                        .read(counterProvider.notifier)
-                        .justChangeId(Random().nextInt(100).toString());
-                  },
-                  child: Text("justChangeId")),
-              ElevatedButton(
-                  onPressed: () {
-                    final wordPair = generateWordPairs().first;
-                    ref.read(counterProvider.notifier).justChangeName(
-                        "${wordPair.first} - -${wordPair.second}");
-                  },
-                  child: Text("justChangeName"))
-            ],
-          ),
+          Text("student ${student.id.toString()} : ${student.name}  --> ${student.toString()}"),
+
+          ElevatedButton(
+              onPressed: () {
+                ref
+                    .read(counterProvider.notifier)
+                    .changeIdWithCopy(Random().nextInt(100).toString());
+              },
+              child: Text("changeIdWithCopy")),
+          ElevatedButton(
+              onPressed: () {
+                final wordPair = generateWordPairs().first;
+                ref.read(counterProvider.notifier).changeNameWithCopy(
+                    "${wordPair.first} - -${wordPair.second}");
+              },
+              child: Text("changeNameWithCopy")),
+
+          ElevatedButton(
+              onPressed: () {
+                ref
+                    .read(counterProvider.notifier)
+                    .justChangeId(Random().nextInt(100).toString());
+              },
+              child: Text("justChangeId")),
+          ElevatedButton(
+              onPressed: () {
+                final wordPair = generateWordPairs().first;
+                ref
+                    .read(counterProvider.notifier)
+                    .justChangeName("${wordPair.first} - -${wordPair.second}");
+              },
+              child: Text("justChangeName")),
         ],
       ),
       floatingActionButton: FloatingActionButton(

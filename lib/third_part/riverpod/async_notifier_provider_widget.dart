@@ -29,6 +29,7 @@ class AsyncNotifierProviderWidget extends ConsumerWidget{
       }),
       floatingActionButton: FloatingActionButton(onPressed: (){
         ref.read(studentAsyncNotifier.notifier).refresh();
+        // ref.refresh(studentAsyncNotifier.future);
       },child: Icon(Icons.refresh),),
     );
   }
@@ -68,6 +69,4 @@ class StudentAsyncNotifier extends AsyncNotifier<Student>{
         return getInfo();
       });
   }
-
-
 }

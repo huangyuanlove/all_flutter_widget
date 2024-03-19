@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:widget_with_codeview/widget_with_codeview.dart';
 
 final globalStateProvider = StateProvider((ref) => 1);
-
 class StateProviderDemoWidget extends ConsumerWidget {
+  //不推荐
   final localStateProvider = StateProvider((ref) => 1);
 
   @override
