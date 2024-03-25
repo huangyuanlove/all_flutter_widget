@@ -11,7 +11,7 @@ class RiverpodSelectWidget extends ConsumerWidget {
     final Student student = ref.watch(provider);
     final String filterFistName =
         ref.watch(provider.select((value) => value.firstName));
-
+    final int age = ref.watch( provider.select((value) => value.age) );
     return Scaffold(
       appBar: AppBar(
         title: Text("select"),
