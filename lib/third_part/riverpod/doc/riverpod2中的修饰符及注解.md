@@ -362,16 +362,179 @@ typedef CounterRef = ProviderRef<int>;
 ```
 可以看到，当 keepAlive 是默认值(true)时，使用的是`AutoDisposeProvider`,为 false 时，使用的是`Provider`
 
-#### FutureProvider
+#### FutureProvider 和 StreamProvider
+几乎是一样的写法
+
 ``` dart
-final wordPairProvider = FutureProvider.autoDispose<String>((ref) async {
-  final wordPair = generateWordPairs().first;
-  await Future.delayed(Duration(seconds: 2));
-  return "${wordPair.first} - ${wordPair.second}";
-});
+@riverpod
+Future<String> generateName(GenerateNameRef ref) async {
+    await Future.delayed(Duration(seconds: 5));
+    final wordPair = generateWordPairs().first;
+    return "${wordPair.first}  ${wordPair.second}";
+}
+
+@riverpod
+Stream<int> timeCount(TimeCountRef ref){
+  return Stream.periodic(Duration(seconds: 1),(number){
+    return number +1;
+  });
+}
 ``` 
 
+#### NotifierProvider 
 
+我们把上一篇中`NotifierProvider`例子简化一下，还是那个万能的计数器
 
+``` dart
+//声明一个Notifier对象
+class Counter extends Notifier<int>{
+  @override
+  int build() {
+   return 0;
+  }
+
+ //对 state 进行操作，也可以在外部直接操作
+  void increment(){
+    state ++;
+  }
+
+}
+//两种 provider 的声明方式
+final counterProvider = NotifierProvider<Counter, int>(() {
+  return Counter();
+});
+// final counterProvider = NotifierProvider<Counter, int>(Counter.new);
+```
+在 widget 中使用
+``` dart
+class RiverpodGeneratorWidget extends ConsumerWidget{
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final count = ref.watch(counterProvider);
+    return Scaffold(
+      appBar: AppBar(title: Text("RiverpodGeneratorWidget"),centerTitle: true,),
+      body: Column(children: [
+        Text("count $count")
+      ],),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        //调用 notifier 中定义的方法
+        ref.read(counterProvider.notifier).increment();
+        //直接获取到 state 进行操作
+        ref.read(counterProvider.notifier).state++;
+      },child: Icon(Icons.add),
+      ),
+    );
+  }
+
+}
+```
+那么我们如是用注解代码生成？
+``` dart
+//counter.dart
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'counter.g.dart';
+@riverpod
+class Counter extends _$Counter{
+  @override
+  int build() {
+    return 0;
+  }
+  void increment(){
+    state ++;
+  }
+}
+```
+需要注意的是，这里我们需要继承`_$Counter`而不是`Notifier`。
+因为 `Counter`中的 `build` 方法返回值是`int`类型，生成的代码中也就使用了 `int`类型。简单来讲就是`build`方法的返回值类型决定了 `state` 的类型.
+
+还是需要运行 `flutter pub run build_runner watch` 或者 `dart run build_runner watch`,这时会生成`counter.g.dart`文件，内容如下
+``` dart
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'counter.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$counterHash() => r'7015b4a05f8ed24a914f6b3aad12be335d0c73d7';
+
+/// See also [Counter].
+@ProviderFor(Counter)
+final counterProvider = AutoDisposeNotifierProvider<Counter, int>.internal(
+  Counter.new,
+  name: r'counterProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$counterHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$Counter = AutoDisposeNotifier<int>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+
+```
+
+#### AsyncNotifierProvider
+也是同样的
+``` dart
+@riverpod
+class AsyncCounters extends _$AsyncCounters{
+  @override
+  FutureOr<int> build(){
+    return Future.delayed(Duration(seconds: 3),(){
+      return 1;
+    });
+  }
+}
+```
+生成的代码如下
+``` dart
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'async_counter.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$asyncCountersHash() => r'787b7c6513c7794fa310550d32594b97238e7e3c';
+
+/// See also [AsyncCounters].
+@ProviderFor(AsyncCounters)
+final asyncCountersProvider =
+    AutoDisposeAsyncNotifierProvider<AsyncCounters, int>.internal(
+  AsyncCounters.new,
+  name: r'asyncCountersProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$asyncCountersHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$AsyncCounters = AutoDisposeAsyncNotifier<int>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+
+```
+
+### 其他
+#### Notifier 和 AsyncNotifier：是否值得使用？
+长时间以来，StateNotifier 一直在为我们提供服务，提供了一个存储复杂状态和修改状态逻辑的地方，使其不再依赖于小部件树。
+
+Notifier 和 AsyncNotifier 旨在取代 StateNotifier 并带来一些新的好处：
+
+更容易执行复杂的异步初始化
+更符合人体工程学的 API：不再需要传递 ref
+不再需要手动声明提供者（如果使用 Riverpod Generator）
+对于新项目来说，这些好处是值得的，因为新的类可以帮助您用更少的代码实现更多的功能。
+
+但如果您有很多现有代码使用 StateNotifier，则由您决定是否（或何时）迁移到新的语法。
+
+无论如何，StateNotifier 还会存在一段时间，如果您愿意，可以逐个迁移您的提供者。
+#### 使用 generator 还是手动编写 provider
+使用 generator 需要我们执行额外的代码来生成对应的代码文件，并且在编写生成代码时体验不是那么的友好。但另外一方面，能省去我们编写模板的代码的时间。如何使用，看个人喜好。
 
 

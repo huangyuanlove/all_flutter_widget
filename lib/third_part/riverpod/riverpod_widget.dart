@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget/third_part/riverpod/async_notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/change_notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/future_provider_widget.dart';
+import 'package:flutter_widget/third_part/riverpod/generator/riverpod_generator_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/notifier_provider_widget.dart';
 import 'package:flutter_widget/third_part/riverpod/paged/riverpod_with_paged_list.dart';
 import 'package:flutter_widget/third_part/riverpod/provider_widget.dart';
@@ -182,6 +183,14 @@ class _ReverpodState extends State<ReverpodWidget> {
                       return AsyncNotifierProviderWidget();
                     }))
                   }, child: Text("AsyncNotifierProvider")),
+              Divider(),
+               ElevatedButton(
+                  onPressed: () => {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      return  RiverpodGeneratorWidget();
+                    }))
+                  }, child: Text(" RiverpodGeneratorWidget")),
+             
               Divider(),
               ElevatedButton(
                   onPressed: () => {
