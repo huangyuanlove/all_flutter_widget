@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/complex_widget/listview_slide/swipe_list_item_demo_page.dart';
 import 'package:flutter_widget/complex_widget/notification_test/notification_test_widget_route.dart';
-import 'package:flutter_widget/complex_widget/provider/counter_model.dart';
-import 'package:flutter_widget/complex_widget/provider/counter_model_widget.dart';
 import 'package:flutter_widget/complex_widget/test_nested_scroll_view.dart';
-import 'package:provider/provider.dart';
 
 import 'UseKeyWidget.dart';
 import 'constraint/constraint_test.dart';
@@ -156,27 +153,7 @@ class CustomWidgetHomeState extends State<ComplexWidgetHome> {
                 });
               },
             ),
-            Divider(
-              height: 10,
-            ),
-            ElevatedButton(
-              child: Text("TestProvider"),
-              onPressed: () {
-                final counter = CounterModel();
-                final textSize = 48;
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Provider<int>.value(
-                    value: textSize,
-                    child: ChangeNotifierProvider.value(
-                      value: counter,
-                      child: CounterFirstScreen(),
-                    ),
-                  );
-                })).then((onValue) {
-                  print(onValue);
-                });
-              },
-            ),
+
             Divider(
               height: 10,
             ),

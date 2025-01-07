@@ -2,7 +2,6 @@ import 'package:fconsole/fconsole.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_widget/logger.dart';
-import 'package:flutter_widget/simple_widget/chip/some_tool_tip_widget.dart';
 import 'package:flutter_widget/simple_widget/list_view/use_scrollable.dart';
 import 'package:flutter_widget/complex_widget/complex_widget_home.dart';
 import 'simple_widget/simple_widget_home.dart';
@@ -199,9 +198,7 @@ class MyApp extends StatelessWidget {
           "Chip": (BuildContext context) {
             return SomeChipWidget();
           },
-          "SomeToolTip": (BuildContext context) {
-            return SomeToolTipWidget();
-          },
+
           "ChipTheme": (BuildContext context) {
             return SomeChipWidget();
           },

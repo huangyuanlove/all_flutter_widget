@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/third_part/image_test.dart';
 import 'package:flutter_widget/third_part/riverpod/riverpod_widget.dart';
-import 'package:flutter_widget/third_part/show_rich_text_html.dart';
+
 import 'package:flutter_widget/third_part/sticky_header/sticky_header_like_qq_list.dart';
 
 class ThirdPartHome extends StatelessWidget {
@@ -32,18 +32,7 @@ class ThirdPartHome extends StatelessWidget {
               child: Text("riverpod"),
               style: ButtonStyle(),
             ),
-            Divider(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                Navigator.of(context)
-                    .push(CupertinoPageRoute(builder: (BuildContext context) {
-                  return ShowHtmlTextWidget();
-                }))
-              },
-              child: Text("HtmlWidget"),
-            ),
+
             Divider(
               height: 10,
             ),
