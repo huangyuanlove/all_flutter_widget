@@ -9,7 +9,7 @@ class ButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<ButtonWidget> {
   String buttonShapeType = 'border'; // 边框类型
 
-  String dropdownButtonValue="";
+  String dropdownButtonValue="张三";
 
   void setButtonShapeType() {
     String _buttonShapeType =
@@ -117,7 +117,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                   ],
             ),
           ),
-          ButtonBar(
+          OverflowBar(
             children: <Widget>[
               FloatingActionButton(
                 onPressed: () {
