@@ -786,6 +786,8 @@ class AsyncNotifierProviderWidget extends ConsumerWidget{
   }
 }
 ```
+这里需要注意的是：使用AsyncNotifier与autoDispose的正确方式是继承 AutoDisposeAsyncNotifier类而不是使用 autoDispose 修饰符。
+
 以上就是 riverpod 中常见的 Provider 的用法示例，后面会介绍一些修饰符、注解相关的信息。
 
 ----
