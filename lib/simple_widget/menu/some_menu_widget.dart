@@ -15,7 +15,7 @@ class _SomeMenuWidgetState extends State<SomeMenuWidget> {
   final String _checkedValue4 = 'Four';
 
   String dropDown1Value = "Free";
-  String dropdown2Value ="";
+  String dropdown2Value ="One";
   String dropdown3Value = 'Four';
 
   final String _simpleValue1 = 'Menu item value one';

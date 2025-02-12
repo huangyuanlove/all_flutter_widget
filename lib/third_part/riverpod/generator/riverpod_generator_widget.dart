@@ -6,7 +6,7 @@ class RiverpodGeneratorWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(counterProvider);
-    final asyncValue = ref.watch(asyncCountProvider);
+    // final asyncValue = ref.watch(asyncCountProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -16,22 +16,22 @@ class RiverpodGeneratorWidget extends ConsumerWidget {
       body: Column(
         children: [
           Text("count $count"),
-          asyncValue.when(data: (data) {
-            return Text(data.toString());
-          }, error: (error, stack) {
-            return Text(error.toString());
-          }, loading: () {
-            return CircularProgressIndicator();
-          })
+          // asyncValue.when(data: (data) {
+          //   return Text(data.toString());
+          // }, error: (error, stack) {
+          //   return Text(error.toString());
+          // }, loading: () {
+          //   return CircularProgressIndicator();
+          // })
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ref.read(counterProvider.notifier).increment();
-          ref.read(asyncCountProvider.notifier).increament();
-        },
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     ref.read(counterProvider.notifier).increment();
+      //     ref.read(asyncCountProvider.notifier).increament();
+      //   },
+      //   child: Icon(Icons.add),
+      // ),
     );
   }
 }
