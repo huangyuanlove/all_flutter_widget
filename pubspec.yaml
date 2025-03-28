@@ -30,7 +30,7 @@ dependencies:
 
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
-  
+  extended_image: 9.1.0
   fconsole: ^2.6.2
   logger: ^2.5.0
   image: ^4.5.2
