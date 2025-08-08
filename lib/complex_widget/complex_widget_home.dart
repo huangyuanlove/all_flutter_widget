@@ -3,6 +3,7 @@ import 'package:flutter_widget/complex_widget/listview_slide/swipe_list_item_dem
 import 'package:flutter_widget/complex_widget/notification_test/notification_test_widget_route.dart';
 import 'package:flutter_widget/complex_widget/test_nested_scroll_view.dart';
 
+import 'ListViewListener.dart';
 import 'UseKeyWidget.dart';
 import 'constraint/constraint_test.dart';
 import 'custom_error_widget.dart';
@@ -245,6 +246,17 @@ class CustomWidgetHomeState extends State<ComplexWidgetHome> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SwapColorBox();
+                }));
+              },
+            ),
+            Divider(
+              height: 10,
+            ),
+            ElevatedButton(
+              child: Text("ListView滑动监听"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ListviewListener();
                 }));
               },
             ),
